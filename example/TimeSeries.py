@@ -22,7 +22,7 @@ warnings.filterwarnings("ignore", category=FutureWarning)
 warnings.filterwarnings("ignore", category=RuntimeWarning)
 
 # ─── Path setup ─────────────────────────────────────────────────────────────
-sys.path.append('/home/nckh2/qa/ChanFormer_V2/src')
+sys.path.append('D:/VSCODE/Time-Series-Library')
 
 from utils.timefeatures import time_features
 
@@ -65,7 +65,7 @@ STOCK_FILES = {
 
 # ─── Single-step Forecasting Settings ─────────────────────────────────────
 SEQ_LEN       = 90
-PRED_LEN      = 1
+PRED_LEN      = 30
 EPOCHS        = 600
 BATCH_SIZE    = 256
 LR            = 8e-5
