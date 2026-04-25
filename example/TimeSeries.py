@@ -65,7 +65,7 @@ STOCK_FILES = {
 
 # ─── Single-step Forecasting Settings ─────────────────────────────────────
 SEQ_LEN       = 90
-PRED_LEN      = 30
+PRED_LEN      = 30  
 EPOCHS        = 600
 BATCH_SIZE    = 256
 LR            = 8e-5
