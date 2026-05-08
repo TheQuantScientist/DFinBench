@@ -1,8 +1,6 @@
 """
 Unified Benchmarking Script for Time-Series Forecasting Models
 """
-
-
 import os
 import sys
 import math
@@ -17,7 +15,7 @@ from sklearn.preprocessing import MinMaxScaler
 from tqdm import tqdm
 
 # ==============================================================================
-# 1. PATH CONFIGURATION & IMPORTS
+#  PATH CONFIGURATION & IMPORTS
 # ==============================================================================
 os.makedirs("checkpoints", exist_ok=True)
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -28,7 +26,7 @@ from utils.timefeatures import time_features
 
 # ====TRAINABLE MODELS====
 try:
-    from models.TimesNet import Model as TimesNet  # [FIX 1] Đổi TimeNet thành TimesNet
+    from models.TimesNet import Model as TimesNet  
     from models.TimeXer import Model as TimeXer
     from models.TimeMixer import Model as TimeMixer
     from models.ETSformer import Model as ETSformer
@@ -48,16 +46,16 @@ except ImportError as e:
     print(f"[STRUCTURAL FILE ERROR] Cannot find foundation model: {e}")
 
 # ==============================================================================
-# 2. GLOBAL CONFIGURATION (STRICT RULES)
+#  GLOBAL CONFIGURATION (STRICT RULES)
 # ==============================================================================
 CONFIG = {
-    "data_dir": os.path.join(PROJECT_DIR, "dataset", "stock_test"),
-    "pred_len": 30,                 # Target horizon
-    "seq_lens": [60],      # Lookback windows
+    "data_dir": os.path.join(PROJECT_DIR, "dataset", "stock"), 
+    "pred_len": 30,                 
+    "seq_lens": [60, 90, 120],      
     "train_ratio": 0.8,
-    "val_ratio": 0.1,               # Test_ratio is implicitly 0.1
-    "batch_size": 4,
-    "epochs": 1,                   # For trainable models
+    "val_ratio": 0.1,               
+    "batch_size": 8,                
+    "epochs": 10,                   
     "learning_rate": 1e-4,
     "device": torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 }
@@ -74,7 +72,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # ==============================================================================
-# 3. DATA PIPELINE (REAL DATASETS & SCALING)
+#  DATA PIPELINE (REAL DATASETS & SCALING)
 # ==============================================================================
 def load_and_combine(data_dir):
     import glob
@@ -140,24 +138,30 @@ class TimeSeriesDataset(Dataset):
         self.time_mark = time_mark
         self.seq_len = seq_len
         self.pred_len = pred_len
+        # Tính toán độ dài đoạn gối đầu cho Decoder (Giống với args.label_len)
+        self.label_len = seq_len // 2
 
     def __len__(self):
         return len(self.data) - self.seq_len - self.pred_len + 1
 
     def __getitem__(self, idx):
-        s_end = idx + self.seq_len
+        s_begin = idx
+        s_end = s_begin + self.seq_len
+        
+        # r_begin lùi lại một khoảng label_len để tạo đoạn gối đầu cho Transformer Decoder
+        r_begin = s_end - self.label_len
         r_end = s_end + self.pred_len
         
-        seq_x = self.data[idx : s_end]
-        seq_y = self.data[s_end : r_end]
-        seq_x_mark = self.time_mark[idx : s_end]
-        seq_y_mark = self.time_mark[s_end : r_end]
+        seq_x = self.data[s_begin : s_end]
+        seq_y = self.data[r_begin : r_end]
+        seq_x_mark = self.time_mark[s_begin : s_end]
+        seq_y_mark = self.time_mark[r_begin : r_end]
         
         return (torch.FloatTensor(seq_x), torch.FloatTensor(seq_y),
                 torch.FloatTensor(seq_x_mark), torch.FloatTensor(seq_y_mark))
 
 # ==============================================================================
-# 4. BENCHMARK ENGINE
+#  BENCHMARK ENGINE
 # ==============================================================================
 def run_benchmark():
     logger.info(f"Start running Benchmark on device: {CONFIG['device']}")
@@ -173,10 +177,9 @@ def run_benchmark():
     val_time = time_feat[len(train_scaled) : len(train_scaled)+len(val_scaled)]
     test_time = time_feat[-len(test_scaled):]
 
-    # [FIX 2] Khắc phục lỗi cú pháp MODEL_REGISTRY (bỏ mảng lồng nhau)
     MODEL_REGISTRY = [
         #--- Group 1: Traditional & Transformer Models (needs_training = True) ---
-        {'name': 'TimesNet',      'class': TimesNet,      'needs_training': True}, # [FIX 1] Đổi TimeNet -> TimesNet
+        {'name': 'TimesNet',      'class': TimesNet,      'needs_training': True}, 
         {'name': 'TimeXer',       'class': TimeXer,       'needs_training': True},
         {'name': 'TimeMixer',     'class': TimeMixer,     'needs_training': True},
         {'name': 'ETSformer',     'class': ETSformer,     'needs_training': True},
@@ -191,12 +194,11 @@ def run_benchmark():
         {'name': 'TimeMoE',       'class': TimeMoE,       'needs_training': False},
     ]
 
-    # 3. Main Evaluation Loop
+    #  Main Evaluation Loop
     for seq_len in CONFIG["seq_lens"]:
         logger.info(f"\n{'='*50}\nEVALUATING SEQUENCE LENGTH: {seq_len}\n{'='*50}")
         
-        # TRÁNH DATA LEAKAGE: Định nghĩa lại Dataset đúng chuẩn cho mỗi Seq_len
-        # Tập Train giữ nguyên
+        # Tập Train
         train_ds = TimeSeriesDataset(train_scaled, train_time, seq_len, CONFIG["pred_len"])
         train_loader = DataLoader(train_ds, batch_size=CONFIG["batch_size"], shuffle=True)
         
@@ -217,25 +219,27 @@ def run_benchmark():
             needs_training = model_info['needs_training']
             logger.info(f"--> Initializing {model_name} (Trainable: {needs_training})")
 
-            # Shared arguments for models
-            # --- CẤU HÌNH ARGUMENTS ĐẦY ĐỦ CHO TẤT CẢ CÁC MODEL ---
+            # ==========================================================
+            # --- CONFIG ARGUMENTS PRODUCTION (FULL POWER FOR SERVER) ---
+            # ==========================================================
             class Args: pass
             args = Args()
             
-            # 1. Cấu hình cơ bản (Basic Configs)
+            #  Basic config
             args.seq_len = seq_len
             args.pred_len = CONFIG["pred_len"]
             args.label_len = seq_len // 2
             args.enc_in = args.dec_in = args.c_out = n_features
             args.task_name = 'long_term_forecast' if needs_training else 'zero_shot_forecast'
+            args.features = 'M'  # Mixer: Multivariate
             
-            # 2. Cấu hình mạng Neural & Transformer (DLinear, Autoformer, PatchTST...)
+            #  Neuron network
             args.moving_avg = 25
-            args.d_model = 32             # Gốc: 512 -> Giảm 16 lần
-            args.n_heads = 4              # Gốc: 8
-            args.e_layers = 1             # Gốc: 2 -> Giảm 2 lần
+            args.d_model = 512         
+            args.n_heads = 8
+            args.e_layers = 2        
             args.d_layers = 1
-            args.d_ff = 64                # Gốc: 2048 -> Giảm 32 lần
+            args.d_ff = 2048 
             args.factor = 1
             args.dropout = 0.1
             args.fc_dropout = 0.1
@@ -245,19 +249,24 @@ def run_benchmark():
             args.embed = 'timeF'
             args.freq = 'd'
             
-            # 3. Cấu hình đặc thù cho TimesNet / TimeMixer / ETSformer
-            args.top_k = 2                # Gốc: 5 -> Giảm số lượng chu kỳ FFT
-            args.num_kernels = 2          # Gốc: 6 -> Giảm Inception kernels
-            args.down_sampling_layers = 0 
-            args.down_sampling_window = 1
+            # Specified config for TimesNet / TimeMixer
+            args.top_k = 5                
+            args.num_kernels = 6          
+            args.down_sampling_layers = 2 
+            args.down_sampling_window = 2 
             args.down_sampling_method = 'avg'
-            args.channel_independence = 1  # Bật Channel Independence cho iTransformer/PatchTST
+            
+            # Specified config for PatchTST / iTransformer / ETSformer
+            args.patch_len = 16
+            args.stride = 8
+            args.channel_independence = 1
             args.decomp_method = 'moving_avg'
             args.use_norm = 1
             args.class_strategy = 'projection'
-            args.p_hidden_dims = [128, 128]
+            args.p_hidden_dims = [128, 128] 
             args.p_hidden_layers = 2
             args.use_future_temporal_feature = 0
+            # ==========================================================
             
             try:
                 model = model_info['class'](args).to(CONFIG['device'])
@@ -290,7 +299,7 @@ def run_benchmark():
                         optimizer.step()
                         train_loss += loss.item()
                     
-                    # Add VAL PHASE: Đánh giá mô hình trên tập Validation để lưu mô hình tốt nhất
+                    # Add VAL PHASE: Evaluate model on Validation set to store best weight of model 
                     model.eval()
                     val_loss = 0
                     with torch.no_grad():

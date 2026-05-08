@@ -4,15 +4,32 @@ from layers.Transformer_EncDec import Encoder, EncoderLayer
 from layers.SelfAttention_Family import FullAttention, AttentionLayer
 from layers.Embed import PatchEmbedding
 import timesfm
+import inspect
+
+# ====================================================================
+# [DFinBench] SELF-HEALING PATCH V2.0:
+# Quét chữ ký hàm (signature) và tự động chặn TẤT CẢ tham số rác 
+# (proxies, resume_download, token...) từ HuggingFace
+# ====================================================================
+original_init = timesfm.TimesFM_2p5_200M_torch.__init__
+valid_params = inspect.signature(original_init).parameters
+
+def patched_init(self, *args, **kwargs):
+    # Chỉ giữ lại những key mà hàm gốc của Google thực sự có khai báo
+    filtered_kwargs = {k: v for k, v in kwargs.items() if k in valid_params}
+    original_init(self, *args, **filtered_kwargs)
+
+timesfm.TimesFM_2p5_200M_torch.__init__ = patched_init
+# ====================================================================
 
 class Model(nn.Module):
     def __init__(self, configs):
         super().__init__()
-        # Đã sửa lỗi chính tả torch_compile
+        current_device = "cuda" if torch.cuda.is_available() else "cpu"
         self.model = timesfm.TimesFM_2p5_200M_torch.from_pretrained(
             "google/timesfm-2.5-200m-pytorch", 
             torch_compile=True, 
-            device="cuda"
+            device=current_device
         )
         self.model.compile(
             timesfm.ForecastConfig(

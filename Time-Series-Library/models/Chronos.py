@@ -8,9 +8,10 @@ from chronos import BaseChronosPipeline
 class Model(nn.Module):
     def __init__(self, configs):
         super().__init__()
+        current_device = "cuda" if torch.cuda.is_available() else "cpu"
         self.model = BaseChronosPipeline.from_pretrained(
             "amazon/chronos-bolt-base",
-            device_map="cuda",  
+            device_map=current_device,  
             torch_dtype=torch.bfloat16,
         )
         self.task_name = configs.task_name
@@ -28,12 +29,10 @@ class Model(nn.Module):
         outputs = []
         # Safe loop for avoiding overflow of VRAM
         for i in range(x_enc.shape[-1]):
-            # Sinh ra dự đoán cho feature thứ i
             # Generate prediction for feature ith
             # Default Output of chronos is [Batch, Num_Samples, Pred_len]
             samples = self.model.predict(x_enc[..., i], prediction_length=self.pred_len)
-            
-            # Lấy trung bình của các mẫu để ra point forecast [Batch, Pred_len]
+        
             # Get mean of samples to get point forecast [Batch, Pred_len]
             point_forecast = samples.mean(dim=1)
             outputs.append(point_forecast)
