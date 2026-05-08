@@ -1,58 +1,26 @@
-# Python bytecode/cache
+# Python bytecode
 __pycache__/
 *.py[cod]
 *$py.class
 
-# Virtual environments
+# Environments
 .venv/
 venv/
-env/
 ENV/
+env/
+dfinbench_env/
 
-# Packaging/build artifacts
-build/
-dist/
-*.egg-info/
-.eggs/
-pip-wheel-metadata/
-
-# Test and coverage artifacts
-.pytest_cache/
-.coverage
-.coverage.*
-htmlcov/
-.mypy_cache/
-.ruff_cache/
-
-# Jupyter checkpoints
-.ipynb_checkpoints/
-
-# Logs and local runtime files
-*.log
-*.tmp
-
-# Environment and secrets
-.env
-.env.*
-
-# IDE/editor files
+# IDEs
 .vscode/
 .idea/
-*.swp
-*.swo
 
-# OS files
+# Project Specific
+
+checkpoints/            # Skip weight files when pushing code
+*.log                   # Skip log files
+*.pth                   # Skip model weight files
+*.weights
+*.ipynb_checkpoints/
+
+# OS specific
 .DS_Store
-Thumbs.db
-
-# Common ML/data outputs
-outputs/
-runs/
-checkpoints/
-*.ckpt
-*.pt
-*.pth
-
-# Optional
-test.py
-
