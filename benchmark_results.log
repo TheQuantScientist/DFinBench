@@ -1,0 +1,1071 @@
+2026-06-11 15:54:39,268 - INFO - Start running Benchmark on device: cuda
+2026-06-11 15:54:39,276 - INFO - [*] Loading 40 data from dataset/stock...
+2026-06-11 15:54:39,644 - INFO - [*] Done combining! Size of total matrix: (1332, 200) (R x C)
+2026-06-11 15:54:39,650 - INFO - [*] Scaling data (MinMaxScaler)...
+2026-06-11 15:54:40,461 - INFO - [*] Split - Train: 1065, Val: 133, Test: 134
+2026-06-11 15:54:40,462 - INFO - 
+==================================================
+EVALUATING SEQUENCE LENGTH: 60
+==================================================
+2026-06-11 15:54:40,462 - INFO - --> Initializing TimesNet (Trainable: True)
+2026-06-11 15:54:42,761 - INFO - Training TimesNet...
+2026-06-11 15:54:55,883 - INFO - Epoch 1 -> Val Loss improved to 0.0286. Saved checkpoint!
+2026-06-11 15:54:55,883 - INFO - Epoch 1 | Train Loss: 0.0120 | Val Loss: 0.0286
+2026-06-11 15:55:06,953 - INFO - Epoch 2 | Train: 0.0073 | Val: 0.0312 (No improvement: 1/5)
+2026-06-11 15:55:06,953 - INFO - Epoch 2 | Train Loss: 0.0073 | Val Loss: 0.0312
+2026-06-11 15:55:18,008 - INFO - Epoch 3 | Train: 0.0053 | Val: 0.0337 (No improvement: 2/5)
+2026-06-11 15:55:18,008 - INFO - Epoch 3 | Train Loss: 0.0053 | Val Loss: 0.0337
+2026-06-11 15:55:29,017 - INFO - Epoch 4 | Train: 0.0043 | Val: 0.0350 (No improvement: 3/5)
+2026-06-11 15:55:29,018 - INFO - Epoch 4 | Train Loss: 0.0043 | Val Loss: 0.0350
+2026-06-11 15:55:40,030 - INFO - Epoch 5 | Train: 0.0037 | Val: 0.0388 (No improvement: 4/5)
+2026-06-11 15:55:40,030 - INFO - Epoch 5 | Train Loss: 0.0037 | Val Loss: 0.0388
+2026-06-11 15:55:51,106 - INFO - Epoch 6 | Train: 0.0033 | Val: 0.0395 (No improvement: 5/5)
+2026-06-11 15:55:51,107 - INFO - 🛑 EARLY STOPPING TRIGGERED 6!
+2026-06-11 15:55:51,107 - INFO - Testing TimesNet on unseen Test set...
+2026-06-11 15:55:52,349 - INFO - *** TimesNet RESULTS (Seq: 60) | RMSE: 0.1909 | MAE: 0.1291 ***
+
+2026-06-11 15:55:52,581 - INFO - --> Initializing TimeXer (Trainable: True)
+2026-06-11 15:55:52,610 - INFO - Training TimeXer...
+2026-06-11 15:55:54,747 - INFO - Epoch 1 -> Val Loss improved to 0.0246. Saved checkpoint!
+2026-06-11 15:55:54,748 - INFO - Epoch 1 | Train Loss: 0.0111 | Val Loss: 0.0246
+2026-06-11 15:55:56,743 - INFO - Epoch 2 -> Val Loss improved to 0.0220. Saved checkpoint!
+2026-06-11 15:55:56,744 - INFO - Epoch 2 | Train Loss: 0.0097 | Val Loss: 0.0220
+2026-06-11 15:55:58,827 - INFO - Epoch 3 -> Val Loss improved to 0.0215. Saved checkpoint!
+2026-06-11 15:55:58,827 - INFO - Epoch 3 | Train Loss: 0.0095 | Val Loss: 0.0215
+2026-06-11 15:56:00,872 - INFO - Epoch 4 | Train: 0.0094 | Val: 0.0232 (No improvement: 1/5)
+2026-06-11 15:56:00,872 - INFO - Epoch 4 | Train Loss: 0.0094 | Val Loss: 0.0232
+2026-06-11 15:56:02,851 - INFO - Epoch 5 -> Val Loss improved to 0.0208. Saved checkpoint!
+2026-06-11 15:56:02,851 - INFO - Epoch 5 | Train Loss: 0.0092 | Val Loss: 0.0208
+2026-06-11 15:56:04,828 - INFO - Epoch 6 -> Val Loss improved to 0.0208. Saved checkpoint!
+2026-06-11 15:56:04,828 - INFO - Epoch 6 | Train Loss: 0.0091 | Val Loss: 0.0208
+2026-06-11 15:56:06,746 - INFO - Epoch 7 | Train: 0.0089 | Val: 0.0212 (No improvement: 1/5)
+2026-06-11 15:56:06,747 - INFO - Epoch 7 | Train Loss: 0.0089 | Val Loss: 0.0212
+2026-06-11 15:56:08,717 - INFO - Epoch 8 | Train: 0.0087 | Val: 0.0220 (No improvement: 2/5)
+2026-06-11 15:56:08,718 - INFO - Epoch 8 | Train Loss: 0.0087 | Val Loss: 0.0220
+2026-06-11 15:56:10,628 - INFO - Epoch 9 | Train: 0.0086 | Val: 0.0218 (No improvement: 3/5)
+2026-06-11 15:56:10,629 - INFO - Epoch 9 | Train Loss: 0.0086 | Val Loss: 0.0218
+2026-06-11 15:56:12,583 - INFO - Epoch 10 | Train: 0.0084 | Val: 0.0218 (No improvement: 4/5)
+2026-06-11 15:56:12,583 - INFO - Epoch 10 | Train Loss: 0.0084 | Val Loss: 0.0218
+2026-06-11 15:56:14,512 - INFO - Epoch 11 | Train: 0.0084 | Val: 0.0223 (No improvement: 5/5)
+2026-06-11 15:56:14,512 - INFO - 🛑 EARLY STOPPING TRIGGERED 11!
+2026-06-11 15:56:14,512 - INFO - Testing TimeXer on unseen Test set...
+2026-06-11 15:56:14,837 - INFO - *** TimeXer RESULTS (Seq: 60) | RMSE: 0.1521 | MAE: 0.1011 ***
+
+2026-06-11 15:56:15,102 - INFO - --> Initializing TimeMixer (Trainable: True)
+2026-06-11 15:56:15,119 - INFO - Training TimeMixer...
+2026-06-11 15:56:30,110 - INFO - Epoch 1 -> Val Loss improved to 0.0301. Saved checkpoint!
+2026-06-11 15:56:30,111 - INFO - Epoch 1 | Train Loss: 0.0133 | Val Loss: 0.0301
+2026-06-11 15:56:45,042 - INFO - Epoch 2 -> Val Loss improved to 0.0223. Saved checkpoint!
+2026-06-11 15:56:45,042 - INFO - Epoch 2 | Train Loss: 0.0102 | Val Loss: 0.0223
+2026-06-11 15:56:59,944 - INFO - Epoch 3 -> Val Loss improved to 0.0211. Saved checkpoint!
+2026-06-11 15:56:59,945 - INFO - Epoch 3 | Train Loss: 0.0088 | Val Loss: 0.0211
+2026-06-11 15:57:14,942 - INFO - Epoch 4 -> Val Loss improved to 0.0207. Saved checkpoint!
+2026-06-11 15:57:14,942 - INFO - Epoch 4 | Train Loss: 0.0085 | Val Loss: 0.0207
+2026-06-11 15:57:29,952 - INFO - Epoch 5 -> Val Loss improved to 0.0203. Saved checkpoint!
+2026-06-11 15:57:29,952 - INFO - Epoch 5 | Train Loss: 0.0084 | Val Loss: 0.0203
+2026-06-11 15:57:45,031 - INFO - Epoch 6 -> Val Loss improved to 0.0200. Saved checkpoint!
+2026-06-11 15:57:45,031 - INFO - Epoch 6 | Train Loss: 0.0083 | Val Loss: 0.0200
+2026-06-11 15:58:00,166 - INFO - Epoch 7 -> Val Loss improved to 0.0196. Saved checkpoint!
+2026-06-11 15:58:00,166 - INFO - Epoch 7 | Train Loss: 0.0082 | Val Loss: 0.0196
+2026-06-11 15:58:15,339 - INFO - Epoch 8 -> Val Loss improved to 0.0195. Saved checkpoint!
+2026-06-11 15:58:15,339 - INFO - Epoch 8 | Train Loss: 0.0082 | Val Loss: 0.0195
+2026-06-11 15:58:30,449 - INFO - Epoch 9 | Train: 0.0081 | Val: 0.0195 (No improvement: 1/5)
+2026-06-11 15:58:30,449 - INFO - Epoch 9 | Train Loss: 0.0081 | Val Loss: 0.0195
+2026-06-11 15:58:45,591 - INFO - Epoch 10 -> Val Loss improved to 0.0190. Saved checkpoint!
+2026-06-11 15:58:45,591 - INFO - Epoch 10 | Train Loss: 0.0081 | Val Loss: 0.0190
+2026-06-11 15:59:00,767 - INFO - Epoch 11 -> Val Loss improved to 0.0188. Saved checkpoint!
+2026-06-11 15:59:00,768 - INFO - Epoch 11 | Train Loss: 0.0080 | Val Loss: 0.0188
+2026-06-11 15:59:16,045 - INFO - Epoch 12 -> Val Loss improved to 0.0187. Saved checkpoint!
+2026-06-11 15:59:16,045 - INFO - Epoch 12 | Train Loss: 0.0080 | Val Loss: 0.0187
+2026-06-11 15:59:32,020 - INFO - Epoch 13 -> Val Loss improved to 0.0187. Saved checkpoint!
+2026-06-11 15:59:32,020 - INFO - Epoch 13 | Train Loss: 0.0080 | Val Loss: 0.0187
+2026-06-11 15:59:47,180 - INFO - Epoch 14 | Train: 0.0079 | Val: 0.0189 (No improvement: 1/5)
+2026-06-11 15:59:47,180 - INFO - Epoch 14 | Train Loss: 0.0079 | Val Loss: 0.0189
+2026-06-11 16:00:02,348 - INFO - Epoch 15 -> Val Loss improved to 0.0186. Saved checkpoint!
+2026-06-11 16:00:02,349 - INFO - Epoch 15 | Train Loss: 0.0079 | Val Loss: 0.0186
+2026-06-11 16:00:17,577 - INFO - Epoch 16 -> Val Loss improved to 0.0183. Saved checkpoint!
+2026-06-11 16:00:17,578 - INFO - Epoch 16 | Train Loss: 0.0079 | Val Loss: 0.0183
+2026-06-11 16:00:32,763 - INFO - Epoch 17 -> Val Loss improved to 0.0182. Saved checkpoint!
+2026-06-11 16:00:32,763 - INFO - Epoch 17 | Train Loss: 0.0079 | Val Loss: 0.0182
+2026-06-11 16:00:47,923 - INFO - Epoch 18 | Train: 0.0079 | Val: 0.0187 (No improvement: 1/5)
+2026-06-11 16:00:47,924 - INFO - Epoch 18 | Train Loss: 0.0079 | Val Loss: 0.0187
+2026-06-11 16:01:03,123 - INFO - Epoch 19 | Train: 0.0078 | Val: 0.0183 (No improvement: 2/5)
+2026-06-11 16:01:03,123 - INFO - Epoch 19 | Train Loss: 0.0078 | Val Loss: 0.0183
+2026-06-11 16:01:18,305 - INFO - Epoch 20 -> Val Loss improved to 0.0182. Saved checkpoint!
+2026-06-11 16:01:18,305 - INFO - Epoch 20 | Train Loss: 0.0078 | Val Loss: 0.0182
+2026-06-11 16:01:33,501 - INFO - Epoch 21 -> Val Loss improved to 0.0176. Saved checkpoint!
+2026-06-11 16:01:33,501 - INFO - Epoch 21 | Train Loss: 0.0078 | Val Loss: 0.0176
+2026-06-11 16:01:48,665 - INFO - Epoch 22 | Train: 0.0078 | Val: 0.0180 (No improvement: 1/5)
+2026-06-11 16:01:48,665 - INFO - Epoch 22 | Train Loss: 0.0078 | Val Loss: 0.0180
+2026-06-11 16:02:03,844 - INFO - Epoch 23 | Train: 0.0077 | Val: 0.0181 (No improvement: 2/5)
+2026-06-11 16:02:03,845 - INFO - Epoch 23 | Train Loss: 0.0077 | Val Loss: 0.0181
+2026-06-11 16:02:19,016 - INFO - Epoch 24 | Train: 0.0077 | Val: 0.0179 (No improvement: 3/5)
+2026-06-11 16:02:19,016 - INFO - Epoch 24 | Train Loss: 0.0077 | Val Loss: 0.0179
+2026-06-11 16:02:34,460 - INFO - Epoch 25 | Train: 0.0077 | Val: 0.0180 (No improvement: 4/5)
+2026-06-11 16:02:34,461 - INFO - Epoch 25 | Train Loss: 0.0077 | Val Loss: 0.0180
+2026-06-11 16:02:49,588 - INFO - Epoch 26 | Train: 0.0077 | Val: 0.0184 (No improvement: 5/5)
+2026-06-11 16:02:49,588 - INFO - 🛑 EARLY STOPPING TRIGGERED 26!
+2026-06-11 16:02:49,588 - INFO - Testing TimeMixer on unseen Test set...
+2026-06-11 16:02:50,466 - INFO - *** TimeMixer RESULTS (Seq: 60) | RMSE: 0.1402 | MAE: 0.0935 ***
+
+2026-06-11 16:02:50,880 - INFO - --> Initializing ETSformer (Trainable: True)
+2026-06-11 16:02:50,901 - INFO - Training ETSformer...
+2026-06-11 16:02:54,188 - INFO - Epoch 1 -> Val Loss improved to 0.0636. Saved checkpoint!
+2026-06-11 16:02:54,188 - INFO - Epoch 1 | Train Loss: 0.2293 | Val Loss: 0.0636
+2026-06-11 16:02:57,019 - INFO - Epoch 2 -> Val Loss improved to 0.0487. Saved checkpoint!
+2026-06-11 16:02:57,020 - INFO - Epoch 2 | Train Loss: 0.1713 | Val Loss: 0.0487
+2026-06-11 16:02:59,646 - INFO - Epoch 3 -> Val Loss improved to 0.0411. Saved checkpoint!
+2026-06-11 16:02:59,646 - INFO - Epoch 3 | Train Loss: 0.1513 | Val Loss: 0.0411
+2026-06-11 16:03:02,227 - INFO - Epoch 4 -> Val Loss improved to 0.0362. Saved checkpoint!
+2026-06-11 16:03:02,227 - INFO - Epoch 4 | Train Loss: 0.1396 | Val Loss: 0.0362
+2026-06-11 16:03:04,892 - INFO - Epoch 5 -> Val Loss improved to 0.0346. Saved checkpoint!
+2026-06-11 16:03:04,892 - INFO - Epoch 5 | Train Loss: 0.1317 | Val Loss: 0.0346
+2026-06-11 16:03:07,650 - INFO - Epoch 6 -> Val Loss improved to 0.0318. Saved checkpoint!
+2026-06-11 16:03:07,651 - INFO - Epoch 6 | Train Loss: 0.1257 | Val Loss: 0.0318
+2026-06-11 16:03:10,338 - INFO - Epoch 7 -> Val Loss improved to 0.0311. Saved checkpoint!
+2026-06-11 16:03:10,339 - INFO - Epoch 7 | Train Loss: 0.1187 | Val Loss: 0.0311
+2026-06-11 16:03:13,019 - INFO - Epoch 8 -> Val Loss improved to 0.0301. Saved checkpoint!
+2026-06-11 16:03:13,019 - INFO - Epoch 8 | Train Loss: 0.1146 | Val Loss: 0.0301
+2026-06-11 16:03:15,814 - INFO - Epoch 9 -> Val Loss improved to 0.0290. Saved checkpoint!
+2026-06-11 16:03:15,815 - INFO - Epoch 9 | Train Loss: 0.1121 | Val Loss: 0.0290
+2026-06-11 16:03:18,463 - INFO - Epoch 10 -> Val Loss improved to 0.0288. Saved checkpoint!
+2026-06-11 16:03:18,463 - INFO - Epoch 10 | Train Loss: 0.1081 | Val Loss: 0.0288
+2026-06-11 16:03:21,138 - INFO - Epoch 11 -> Val Loss improved to 0.0281. Saved checkpoint!
+2026-06-11 16:03:21,138 - INFO - Epoch 11 | Train Loss: 0.1048 | Val Loss: 0.0281
+2026-06-11 16:03:23,922 - INFO - Epoch 12 -> Val Loss improved to 0.0276. Saved checkpoint!
+2026-06-11 16:03:23,922 - INFO - Epoch 12 | Train Loss: 0.1023 | Val Loss: 0.0276
+2026-06-11 16:03:26,491 - INFO - Epoch 13 | Train: 0.0999 | Val: 0.0277 (No improvement: 1/5)
+2026-06-11 16:03:26,492 - INFO - Epoch 13 | Train Loss: 0.0999 | Val Loss: 0.0277
+2026-06-11 16:03:29,105 - INFO - Epoch 14 -> Val Loss improved to 0.0272. Saved checkpoint!
+2026-06-11 16:03:29,105 - INFO - Epoch 14 | Train Loss: 0.0969 | Val Loss: 0.0272
+2026-06-11 16:03:31,676 - INFO - Epoch 15 -> Val Loss improved to 0.0270. Saved checkpoint!
+2026-06-11 16:03:31,676 - INFO - Epoch 15 | Train Loss: 0.0958 | Val Loss: 0.0270
+2026-06-11 16:03:34,373 - INFO - Epoch 16 -> Val Loss improved to 0.0266. Saved checkpoint!
+2026-06-11 16:03:34,373 - INFO - Epoch 16 | Train Loss: 0.0940 | Val Loss: 0.0266
+2026-06-11 16:03:37,087 - INFO - Epoch 17 | Train: 0.0926 | Val: 0.0272 (No improvement: 1/5)
+2026-06-11 16:03:37,087 - INFO - Epoch 17 | Train Loss: 0.0926 | Val Loss: 0.0272
+2026-06-11 16:03:39,845 - INFO - Epoch 18 -> Val Loss improved to 0.0265. Saved checkpoint!
+2026-06-11 16:03:39,845 - INFO - Epoch 18 | Train Loss: 0.0903 | Val Loss: 0.0265
+2026-06-11 16:03:42,795 - INFO - Epoch 19 | Train: 0.0897 | Val: 0.0266 (No improvement: 1/5)
+2026-06-11 16:03:42,796 - INFO - Epoch 19 | Train Loss: 0.0897 | Val Loss: 0.0266
+2026-06-11 16:03:45,597 - INFO - Epoch 20 -> Val Loss improved to 0.0260. Saved checkpoint!
+2026-06-11 16:03:45,597 - INFO - Epoch 20 | Train Loss: 0.0884 | Val Loss: 0.0260
+2026-06-11 16:03:48,439 - INFO - Epoch 21 | Train: 0.0879 | Val: 0.0261 (No improvement: 1/5)
+2026-06-11 16:03:48,439 - INFO - Epoch 21 | Train Loss: 0.0879 | Val Loss: 0.0261
+2026-06-11 16:03:51,460 - INFO - Epoch 22 -> Val Loss improved to 0.0258. Saved checkpoint!
+2026-06-11 16:03:51,460 - INFO - Epoch 22 | Train Loss: 0.0867 | Val Loss: 0.0258
+2026-06-11 16:03:54,450 - INFO - Epoch 23 -> Val Loss improved to 0.0255. Saved checkpoint!
+2026-06-11 16:03:54,450 - INFO - Epoch 23 | Train Loss: 0.0850 | Val Loss: 0.0255
+2026-06-11 16:03:57,240 - INFO - Epoch 24 | Train: 0.0842 | Val: 0.0262 (No improvement: 1/5)
+2026-06-11 16:03:57,241 - INFO - Epoch 24 | Train Loss: 0.0842 | Val Loss: 0.0262
+2026-06-11 16:04:00,085 - INFO - Epoch 25 | Train: 0.0837 | Val: 0.0259 (No improvement: 2/5)
+2026-06-11 16:04:00,086 - INFO - Epoch 25 | Train Loss: 0.0837 | Val Loss: 0.0259
+2026-06-11 16:04:02,829 - INFO - Epoch 26 | Train: 0.0839 | Val: 0.0258 (No improvement: 3/5)
+2026-06-11 16:04:02,829 - INFO - Epoch 26 | Train Loss: 0.0839 | Val Loss: 0.0258
+2026-06-11 16:04:05,748 - INFO - Epoch 27 -> Val Loss improved to 0.0254. Saved checkpoint!
+2026-06-11 16:04:05,748 - INFO - Epoch 27 | Train Loss: 0.0835 | Val Loss: 0.0254
+2026-06-11 16:04:08,543 - INFO - Epoch 28 | Train: 0.0829 | Val: 0.0258 (No improvement: 1/5)
+2026-06-11 16:04:08,543 - INFO - Epoch 28 | Train Loss: 0.0829 | Val Loss: 0.0258
+2026-06-11 16:04:11,423 - INFO - Epoch 29 -> Val Loss improved to 0.0249. Saved checkpoint!
+2026-06-11 16:04:11,423 - INFO - Epoch 29 | Train Loss: 0.0822 | Val Loss: 0.0249
+2026-06-11 16:04:14,163 - INFO - Epoch 30 | Train: 0.0814 | Val: 0.0255 (No improvement: 1/5)
+2026-06-11 16:04:14,163 - INFO - Epoch 30 | Train Loss: 0.0814 | Val Loss: 0.0255
+2026-06-11 16:04:16,668 - INFO - Epoch 31 | Train: 0.0799 | Val: 0.0251 (No improvement: 2/5)
+2026-06-11 16:04:16,669 - INFO - Epoch 31 | Train Loss: 0.0799 | Val Loss: 0.0251
+2026-06-11 16:04:19,244 - INFO - Epoch 32 | Train: 0.0797 | Val: 0.0257 (No improvement: 3/5)
+2026-06-11 16:04:19,245 - INFO - Epoch 32 | Train Loss: 0.0797 | Val Loss: 0.0257
+2026-06-11 16:04:21,930 - INFO - Epoch 33 | Train: 0.0802 | Val: 0.0262 (No improvement: 4/5)
+2026-06-11 16:04:21,931 - INFO - Epoch 33 | Train Loss: 0.0802 | Val Loss: 0.0262
+2026-06-11 16:04:24,610 - INFO - Epoch 34 | Train: 0.0791 | Val: 0.0252 (No improvement: 5/5)
+2026-06-11 16:04:24,611 - INFO - 🛑 EARLY STOPPING TRIGGERED 34!
+2026-06-11 16:04:24,611 - INFO - Testing ETSformer on unseen Test set...
+2026-06-11 16:04:25,010 - INFO - *** ETSformer RESULTS (Seq: 60) | RMSE: 0.1597 | MAE: 0.1140 ***
+
+2026-06-11 16:04:25,216 - INFO - --> Initializing DLinear (Trainable: True)
+2026-06-11 16:04:25,218 - INFO - Training DLinear...
+2026-06-11 16:04:25,998 - INFO - Epoch 1 -> Val Loss improved to 0.0366. Saved checkpoint!
+2026-06-11 16:04:25,999 - INFO - Epoch 1 | Train Loss: 0.0185 | Val Loss: 0.0366
+2026-06-11 16:04:26,813 - INFO - Epoch 2 -> Val Loss improved to 0.0354. Saved checkpoint!
+2026-06-11 16:04:26,814 - INFO - Epoch 2 | Train Loss: 0.0155 | Val Loss: 0.0354
+2026-06-11 16:04:27,627 - INFO - Epoch 3 -> Val Loss improved to 0.0344. Saved checkpoint!
+2026-06-11 16:04:27,627 - INFO - Epoch 3 | Train Loss: 0.0146 | Val Loss: 0.0344
+2026-06-11 16:04:28,484 - INFO - Epoch 4 -> Val Loss improved to 0.0327. Saved checkpoint!
+2026-06-11 16:04:28,484 - INFO - Epoch 4 | Train Loss: 0.0139 | Val Loss: 0.0327
+2026-06-11 16:04:29,250 - INFO - Epoch 5 -> Val Loss improved to 0.0313. Saved checkpoint!
+2026-06-11 16:04:29,250 - INFO - Epoch 5 | Train Loss: 0.0132 | Val Loss: 0.0313
+2026-06-11 16:04:30,023 - INFO - Epoch 6 -> Val Loss improved to 0.0302. Saved checkpoint!
+2026-06-11 16:04:30,024 - INFO - Epoch 6 | Train Loss: 0.0126 | Val Loss: 0.0302
+2026-06-11 16:04:30,824 - INFO - Epoch 7 -> Val Loss improved to 0.0291. Saved checkpoint!
+2026-06-11 16:04:30,824 - INFO - Epoch 7 | Train Loss: 0.0121 | Val Loss: 0.0291
+2026-06-11 16:04:31,673 - INFO - Epoch 8 -> Val Loss improved to 0.0291. Saved checkpoint!
+2026-06-11 16:04:31,673 - INFO - Epoch 8 | Train Loss: 0.0116 | Val Loss: 0.0291
+2026-06-11 16:04:32,404 - INFO - Epoch 9 -> Val Loss improved to 0.0279. Saved checkpoint!
+2026-06-11 16:04:32,405 - INFO - Epoch 9 | Train Loss: 0.0112 | Val Loss: 0.0279
+2026-06-11 16:04:33,250 - INFO - Epoch 10 -> Val Loss improved to 0.0276. Saved checkpoint!
+2026-06-11 16:04:33,250 - INFO - Epoch 10 | Train Loss: 0.0109 | Val Loss: 0.0276
+2026-06-11 16:04:34,043 - INFO - Epoch 11 -> Val Loss improved to 0.0264. Saved checkpoint!
+2026-06-11 16:04:34,043 - INFO - Epoch 11 | Train Loss: 0.0105 | Val Loss: 0.0264
+2026-06-11 16:04:34,864 - INFO - Epoch 12 -> Val Loss improved to 0.0254. Saved checkpoint!
+2026-06-11 16:04:34,864 - INFO - Epoch 12 | Train Loss: 0.0102 | Val Loss: 0.0254
+2026-06-11 16:04:35,682 - INFO - Epoch 13 | Train: 0.0100 | Val: 0.0256 (No improvement: 1/5)
+2026-06-11 16:04:35,682 - INFO - Epoch 13 | Train Loss: 0.0100 | Val Loss: 0.0256
+2026-06-11 16:04:36,467 - INFO - Epoch 14 -> Val Loss improved to 0.0253. Saved checkpoint!
+2026-06-11 16:04:36,467 - INFO - Epoch 14 | Train Loss: 0.0098 | Val Loss: 0.0253
+2026-06-11 16:04:37,212 - INFO - Epoch 15 -> Val Loss improved to 0.0245. Saved checkpoint!
+2026-06-11 16:04:37,212 - INFO - Epoch 15 | Train Loss: 0.0096 | Val Loss: 0.0245
+2026-06-11 16:04:38,003 - INFO - Epoch 16 -> Val Loss improved to 0.0243. Saved checkpoint!
+2026-06-11 16:04:38,004 - INFO - Epoch 16 | Train Loss: 0.0094 | Val Loss: 0.0243
+2026-06-11 16:04:38,771 - INFO - Epoch 17 -> Val Loss improved to 0.0237. Saved checkpoint!
+2026-06-11 16:04:38,772 - INFO - Epoch 17 | Train Loss: 0.0092 | Val Loss: 0.0237
+2026-06-11 16:04:39,575 - INFO - Epoch 18 | Train: 0.0091 | Val: 0.0244 (No improvement: 1/5)
+2026-06-11 16:04:39,576 - INFO - Epoch 18 | Train Loss: 0.0091 | Val Loss: 0.0244
+2026-06-11 16:04:40,378 - INFO - Epoch 19 | Train: 0.0090 | Val: 0.0244 (No improvement: 2/5)
+2026-06-11 16:04:40,379 - INFO - Epoch 19 | Train Loss: 0.0090 | Val Loss: 0.0244
+2026-06-11 16:04:41,178 - INFO - Epoch 20 -> Val Loss improved to 0.0232. Saved checkpoint!
+2026-06-11 16:04:41,178 - INFO - Epoch 20 | Train Loss: 0.0089 | Val Loss: 0.0232
+2026-06-11 16:04:41,968 - INFO - Epoch 21 -> Val Loss improved to 0.0224. Saved checkpoint!
+2026-06-11 16:04:41,968 - INFO - Epoch 21 | Train Loss: 0.0088 | Val Loss: 0.0224
+2026-06-11 16:04:42,739 - INFO - Epoch 22 | Train: 0.0087 | Val: 0.0229 (No improvement: 1/5)
+2026-06-11 16:04:42,739 - INFO - Epoch 22 | Train Loss: 0.0087 | Val Loss: 0.0229
+2026-06-11 16:04:43,531 - INFO - Epoch 23 | Train: 0.0086 | Val: 0.0233 (No improvement: 2/5)
+2026-06-11 16:04:43,531 - INFO - Epoch 23 | Train Loss: 0.0086 | Val Loss: 0.0233
+2026-06-11 16:04:44,327 - INFO - Epoch 24 | Train: 0.0085 | Val: 0.0230 (No improvement: 3/5)
+2026-06-11 16:04:44,327 - INFO - Epoch 24 | Train Loss: 0.0085 | Val Loss: 0.0230
+2026-06-11 16:04:45,069 - INFO - Epoch 25 | Train: 0.0085 | Val: 0.0230 (No improvement: 4/5)
+2026-06-11 16:04:45,070 - INFO - Epoch 25 | Train Loss: 0.0085 | Val Loss: 0.0230
+2026-06-11 16:04:45,863 - INFO - Epoch 26 -> Val Loss improved to 0.0217. Saved checkpoint!
+2026-06-11 16:04:45,864 - INFO - Epoch 26 | Train Loss: 0.0084 | Val Loss: 0.0217
+2026-06-11 16:04:46,661 - INFO - Epoch 27 | Train: 0.0084 | Val: 0.0225 (No improvement: 1/5)
+2026-06-11 16:04:46,661 - INFO - Epoch 27 | Train Loss: 0.0084 | Val Loss: 0.0225
+2026-06-11 16:04:47,430 - INFO - Epoch 28 | Train: 0.0083 | Val: 0.0223 (No improvement: 2/5)
+2026-06-11 16:04:47,430 - INFO - Epoch 28 | Train Loss: 0.0083 | Val Loss: 0.0223
+2026-06-11 16:04:48,248 - INFO - Epoch 29 | Train: 0.0083 | Val: 0.0224 (No improvement: 3/5)
+2026-06-11 16:04:48,249 - INFO - Epoch 29 | Train Loss: 0.0083 | Val Loss: 0.0224
+2026-06-11 16:04:49,027 - INFO - Epoch 30 | Train: 0.0083 | Val: 0.0220 (No improvement: 4/5)
+2026-06-11 16:04:49,028 - INFO - Epoch 30 | Train Loss: 0.0083 | Val Loss: 0.0220
+2026-06-11 16:04:49,825 - INFO - Epoch 31 | Train: 0.0082 | Val: 0.0227 (No improvement: 5/5)
+2026-06-11 16:04:49,825 - INFO - 🛑 EARLY STOPPING TRIGGERED 31!
+2026-06-11 16:04:49,825 - INFO - Testing DLinear on unseen Test set...
+2026-06-11 16:04:50,133 - INFO - *** DLinear RESULTS (Seq: 60) | RMSE: 0.1487 | MAE: 0.0990 ***
+
+2026-06-11 16:04:50,350 - INFO - --> Initializing Autoformer (Trainable: True)
+2026-06-11 16:04:50,390 - INFO - Training Autoformer...
+2026-06-11 16:04:53,514 - INFO - Epoch 1 -> Val Loss improved to 0.0449. Saved checkpoint!
+2026-06-11 16:04:53,514 - INFO - Epoch 1 | Train Loss: 0.0944 | Val Loss: 0.0449
+2026-06-11 16:04:56,475 - INFO - Epoch 2 -> Val Loss improved to 0.0401. Saved checkpoint!
+2026-06-11 16:04:56,475 - INFO - Epoch 2 | Train Loss: 0.0386 | Val Loss: 0.0401
+2026-06-11 16:04:59,173 - INFO - Epoch 3 -> Val Loss improved to 0.0383. Saved checkpoint!
+2026-06-11 16:04:59,173 - INFO - Epoch 3 | Train Loss: 0.0339 | Val Loss: 0.0383
+2026-06-11 16:05:02,166 - INFO - Epoch 4 -> Val Loss improved to 0.0374. Saved checkpoint!
+2026-06-11 16:05:02,167 - INFO - Epoch 4 | Train Loss: 0.0305 | Val Loss: 0.0374
+2026-06-11 16:05:05,253 - INFO - Epoch 5 -> Val Loss improved to 0.0369. Saved checkpoint!
+2026-06-11 16:05:05,254 - INFO - Epoch 5 | Train Loss: 0.0282 | Val Loss: 0.0369
+2026-06-11 16:05:08,232 - INFO - Epoch 6 -> Val Loss improved to 0.0364. Saved checkpoint!
+2026-06-11 16:05:08,232 - INFO - Epoch 6 | Train Loss: 0.0263 | Val Loss: 0.0364
+2026-06-11 16:05:11,160 - INFO - Epoch 7 -> Val Loss improved to 0.0361. Saved checkpoint!
+2026-06-11 16:05:11,161 - INFO - Epoch 7 | Train Loss: 0.0245 | Val Loss: 0.0361
+2026-06-11 16:05:14,176 - INFO - Epoch 8 -> Val Loss improved to 0.0354. Saved checkpoint!
+2026-06-11 16:05:14,177 - INFO - Epoch 8 | Train Loss: 0.0228 | Val Loss: 0.0354
+2026-06-11 16:05:16,768 - INFO - Epoch 9 | Train: 0.0216 | Val: 0.0368 (No improvement: 1/5)
+2026-06-11 16:05:16,769 - INFO - Epoch 9 | Train Loss: 0.0216 | Val Loss: 0.0368
+2026-06-11 16:05:19,512 - INFO - Epoch 10 | Train: 0.0207 | Val: 0.0359 (No improvement: 2/5)
+2026-06-11 16:05:19,513 - INFO - Epoch 10 | Train Loss: 0.0207 | Val Loss: 0.0359
+2026-06-11 16:05:22,493 - INFO - Epoch 11 | Train: 0.0195 | Val: 0.0355 (No improvement: 3/5)
+2026-06-11 16:05:22,493 - INFO - Epoch 11 | Train Loss: 0.0195 | Val Loss: 0.0355
+2026-06-11 16:05:25,576 - INFO - Epoch 12 -> Val Loss improved to 0.0351. Saved checkpoint!
+2026-06-11 16:05:25,576 - INFO - Epoch 12 | Train Loss: 0.0183 | Val Loss: 0.0351
+2026-06-11 16:05:28,529 - INFO - Epoch 13 | Train: 0.0171 | Val: 0.0352 (No improvement: 1/5)
+2026-06-11 16:05:28,530 - INFO - Epoch 13 | Train Loss: 0.0171 | Val Loss: 0.0352
+2026-06-11 16:05:31,424 - INFO - Epoch 14 | Train: 0.0160 | Val: 0.0362 (No improvement: 2/5)
+2026-06-11 16:05:31,425 - INFO - Epoch 14 | Train Loss: 0.0160 | Val Loss: 0.0362
+2026-06-11 16:05:34,400 - INFO - Epoch 15 -> Val Loss improved to 0.0349. Saved checkpoint!
+2026-06-11 16:05:34,400 - INFO - Epoch 15 | Train Loss: 0.0153 | Val Loss: 0.0349
+2026-06-11 16:05:37,223 - INFO - Epoch 16 -> Val Loss improved to 0.0349. Saved checkpoint!
+2026-06-11 16:05:37,224 - INFO - Epoch 16 | Train Loss: 0.0147 | Val Loss: 0.0349
+2026-06-11 16:05:40,174 - INFO - Epoch 17 | Train: 0.0143 | Val: 0.0353 (No improvement: 1/5)
+2026-06-11 16:05:40,174 - INFO - Epoch 17 | Train Loss: 0.0143 | Val Loss: 0.0353
+2026-06-11 16:05:43,105 - INFO - Epoch 18 -> Val Loss improved to 0.0345. Saved checkpoint!
+2026-06-11 16:05:43,105 - INFO - Epoch 18 | Train Loss: 0.0139 | Val Loss: 0.0345
+2026-06-11 16:05:46,125 - INFO - Epoch 19 | Train: 0.0137 | Val: 0.0353 (No improvement: 1/5)
+2026-06-11 16:05:46,126 - INFO - Epoch 19 | Train Loss: 0.0137 | Val Loss: 0.0353
+2026-06-11 16:05:48,916 - INFO - Epoch 20 | Train: 0.0135 | Val: 0.0347 (No improvement: 2/5)
+2026-06-11 16:05:48,916 - INFO - Epoch 20 | Train Loss: 0.0135 | Val Loss: 0.0347
+2026-06-11 16:05:51,847 - INFO - Epoch 21 | Train: 0.0133 | Val: 0.0356 (No improvement: 3/5)
+2026-06-11 16:05:51,848 - INFO - Epoch 21 | Train Loss: 0.0133 | Val Loss: 0.0356
+2026-06-11 16:05:54,690 - INFO - Epoch 22 | Train: 0.0132 | Val: 0.0357 (No improvement: 4/5)
+2026-06-11 16:05:54,691 - INFO - Epoch 22 | Train Loss: 0.0132 | Val Loss: 0.0357
+2026-06-11 16:05:57,665 - INFO - Epoch 23 -> Val Loss improved to 0.0345. Saved checkpoint!
+2026-06-11 16:05:57,665 - INFO - Epoch 23 | Train Loss: 0.0129 | Val Loss: 0.0345
+2026-06-11 16:06:00,533 - INFO - Epoch 24 | Train: 0.0127 | Val: 0.0350 (No improvement: 1/5)
+2026-06-11 16:06:00,533 - INFO - Epoch 24 | Train Loss: 0.0127 | Val Loss: 0.0350
+2026-06-11 16:06:03,449 - INFO - Epoch 25 -> Val Loss improved to 0.0343. Saved checkpoint!
+2026-06-11 16:06:03,449 - INFO - Epoch 25 | Train Loss: 0.0124 | Val Loss: 0.0343
+2026-06-11 16:06:06,437 - INFO - Epoch 26 -> Val Loss improved to 0.0340. Saved checkpoint!
+2026-06-11 16:06:06,437 - INFO - Epoch 26 | Train Loss: 0.0121 | Val Loss: 0.0340
+2026-06-11 16:06:09,367 - INFO - Epoch 27 | Train: 0.0118 | Val: 0.0365 (No improvement: 1/5)
+2026-06-11 16:06:09,369 - INFO - Epoch 27 | Train Loss: 0.0118 | Val Loss: 0.0365
+2026-06-11 16:06:12,323 - INFO - Epoch 28 | Train: 0.0114 | Val: 0.0344 (No improvement: 2/5)
+2026-06-11 16:06:12,324 - INFO - Epoch 28 | Train Loss: 0.0114 | Val Loss: 0.0344
+2026-06-11 16:06:15,329 - INFO - Epoch 29 -> Val Loss improved to 0.0339. Saved checkpoint!
+2026-06-11 16:06:15,329 - INFO - Epoch 29 | Train Loss: 0.0108 | Val Loss: 0.0339
+2026-06-11 16:06:18,307 - INFO - Epoch 30 | Train: 0.0106 | Val: 0.0353 (No improvement: 1/5)
+2026-06-11 16:06:18,308 - INFO - Epoch 30 | Train Loss: 0.0106 | Val Loss: 0.0353
+2026-06-11 16:06:21,352 - INFO - Epoch 31 | Train: 0.0101 | Val: 0.0370 (No improvement: 2/5)
+2026-06-11 16:06:21,352 - INFO - Epoch 31 | Train Loss: 0.0101 | Val Loss: 0.0370
+2026-06-11 16:06:24,160 - INFO - Epoch 32 | Train: 0.0099 | Val: 0.0366 (No improvement: 3/5)
+2026-06-11 16:06:24,160 - INFO - Epoch 32 | Train Loss: 0.0099 | Val Loss: 0.0366
+2026-06-11 16:06:27,102 - INFO - Epoch 33 | Train: 0.0097 | Val: 0.0355 (No improvement: 4/5)
+2026-06-11 16:06:27,102 - INFO - Epoch 33 | Train Loss: 0.0097 | Val Loss: 0.0355
+2026-06-11 16:06:30,005 - INFO - Epoch 34 | Train: 0.0094 | Val: 0.0356 (No improvement: 5/5)
+2026-06-11 16:06:30,006 - INFO - 🛑 EARLY STOPPING TRIGGERED 34!
+2026-06-11 16:06:30,006 - INFO - Testing Autoformer on unseen Test set...
+2026-06-11 16:06:30,427 - INFO - *** Autoformer RESULTS (Seq: 60) | RMSE: 0.2001 | MAE: 0.1363 ***
+
+2026-06-11 16:06:30,653 - INFO - --> Initializing PatchTST (Trainable: True)
+2026-06-11 16:06:30,671 - INFO - Training PatchTST...
+2026-06-11 16:06:33,135 - INFO - Epoch 1 -> Val Loss improved to 0.0198. Saved checkpoint!
+2026-06-11 16:06:33,135 - INFO - Epoch 1 | Train Loss: 0.0101 | Val Loss: 0.0198
+2026-06-11 16:06:35,316 - INFO - Epoch 2 -> Val Loss improved to 0.0192. Saved checkpoint!
+2026-06-11 16:06:35,316 - INFO - Epoch 2 | Train Loss: 0.0090 | Val Loss: 0.0192
+2026-06-11 16:06:37,469 - INFO - Epoch 3 -> Val Loss improved to 0.0189. Saved checkpoint!
+2026-06-11 16:06:37,470 - INFO - Epoch 3 | Train Loss: 0.0087 | Val Loss: 0.0189
+2026-06-11 16:06:40,466 - INFO - Epoch 4 -> Val Loss improved to 0.0186. Saved checkpoint!
+2026-06-11 16:06:40,467 - INFO - Epoch 4 | Train Loss: 0.0086 | Val Loss: 0.0186
+2026-06-11 16:06:43,175 - INFO - Epoch 5 -> Val Loss improved to 0.0180. Saved checkpoint!
+2026-06-11 16:06:43,175 - INFO - Epoch 5 | Train Loss: 0.0085 | Val Loss: 0.0180
+2026-06-11 16:06:46,397 - INFO - Epoch 6 | Train: 0.0085 | Val: 0.0184 (No improvement: 1/5)
+2026-06-11 16:06:46,399 - INFO - Epoch 6 | Train Loss: 0.0085 | Val Loss: 0.0184
+2026-06-11 16:06:48,815 - INFO - Epoch 7 | Train: 0.0084 | Val: 0.0185 (No improvement: 2/5)
+2026-06-11 16:06:48,815 - INFO - Epoch 7 | Train Loss: 0.0084 | Val Loss: 0.0185
+2026-06-11 16:06:50,822 - INFO - Epoch 8 | Train: 0.0084 | Val: 0.0192 (No improvement: 3/5)
+2026-06-11 16:06:50,822 - INFO - Epoch 8 | Train Loss: 0.0084 | Val Loss: 0.0192
+2026-06-11 16:06:52,942 - INFO - Epoch 9 | Train: 0.0083 | Val: 0.0195 (No improvement: 4/5)
+2026-06-11 16:06:52,943 - INFO - Epoch 9 | Train Loss: 0.0083 | Val Loss: 0.0195
+2026-06-11 16:06:55,479 - INFO - Epoch 10 | Train: 0.0083 | Val: 0.0183 (No improvement: 5/5)
+2026-06-11 16:06:55,480 - INFO - 🛑 EARLY STOPPING TRIGGERED 10!
+2026-06-11 16:06:55,480 - INFO - Testing PatchTST on unseen Test set...
+2026-06-11 16:06:55,853 - INFO - *** PatchTST RESULTS (Seq: 60) | RMSE: 0.1367 | MAE: 0.0906 ***
+
+2026-06-11 16:06:56,097 - INFO - --> Initializing iTransformer (Trainable: True)
+2026-06-11 16:06:56,114 - INFO - Training iTransformer...
+2026-06-11 16:06:57,523 - INFO - Epoch 1 -> Val Loss improved to 0.0211. Saved checkpoint!
+2026-06-11 16:06:57,523 - INFO - Epoch 1 | Train Loss: 0.0101 | Val Loss: 0.0211
+2026-06-11 16:06:58,871 - INFO - Epoch 2 -> Val Loss improved to 0.0199. Saved checkpoint!
+2026-06-11 16:06:58,872 - INFO - Epoch 2 | Train Loss: 0.0086 | Val Loss: 0.0199
+2026-06-11 16:07:00,377 - INFO - Epoch 3 -> Val Loss improved to 0.0196. Saved checkpoint!
+2026-06-11 16:07:00,377 - INFO - Epoch 3 | Train Loss: 0.0083 | Val Loss: 0.0196
+2026-06-11 16:07:01,783 - INFO - Epoch 4 -> Val Loss improved to 0.0188. Saved checkpoint!
+2026-06-11 16:07:01,783 - INFO - Epoch 4 | Train Loss: 0.0081 | Val Loss: 0.0188
+2026-06-11 16:07:03,287 - INFO - Epoch 5 -> Val Loss improved to 0.0187. Saved checkpoint!
+2026-06-11 16:07:03,288 - INFO - Epoch 5 | Train Loss: 0.0080 | Val Loss: 0.0187
+2026-06-11 16:07:04,664 - INFO - Epoch 6 | Train: 0.0079 | Val: 0.0192 (No improvement: 1/5)
+2026-06-11 16:07:04,665 - INFO - Epoch 6 | Train Loss: 0.0079 | Val Loss: 0.0192
+2026-06-11 16:07:05,961 - INFO - Epoch 7 | Train: 0.0077 | Val: 0.0197 (No improvement: 2/5)
+2026-06-11 16:07:05,962 - INFO - Epoch 7 | Train Loss: 0.0077 | Val Loss: 0.0197
+2026-06-11 16:07:07,401 - INFO - Epoch 8 | Train: 0.0075 | Val: 0.0203 (No improvement: 3/5)
+2026-06-11 16:07:07,401 - INFO - Epoch 8 | Train Loss: 0.0075 | Val Loss: 0.0203
+2026-06-11 16:07:08,823 - INFO - Epoch 9 | Train: 0.0074 | Val: 0.0209 (No improvement: 4/5)
+2026-06-11 16:07:08,824 - INFO - Epoch 9 | Train Loss: 0.0074 | Val Loss: 0.0209
+2026-06-11 16:07:10,212 - INFO - Epoch 10 | Train: 0.0072 | Val: 0.0208 (No improvement: 5/5)
+2026-06-11 16:07:10,213 - INFO - 🛑 EARLY STOPPING TRIGGERED 10!
+2026-06-11 16:07:10,213 - INFO - Testing iTransformer on unseen Test set...
+2026-06-11 16:07:10,556 - INFO - *** iTransformer RESULTS (Seq: 60) | RMSE: 0.1382 | MAE: 0.0923 ***
+
+2026-06-11 16:07:10,786 - INFO - --> Initializing Chronos (Trainable: False)
+2026-06-11 16:07:19,576 - INFO - Testing Chronos on unseen Test set...
+2026-06-11 16:07:58,017 - INFO - *** Chronos RESULTS (Seq: 60) | RMSE: 0.1434 | MAE: 0.0954 ***
+
+2026-06-11 16:07:58,206 - INFO - --> Initializing TimesFM (Trainable: False)
+2026-06-11 16:07:58,494 - INFO - Downloading checkpoint from Hugging Face repo google/timesfm-2.5-200m-pytorch
+2026-06-11 16:08:00,314 - INFO - Loading checkpoint from: /home/nckh2/.cache/huggingface/hub/models--google--timesfm-2.5-200m-pytorch/snapshots/1d952420fba87f3c6dee4f240de0f1a0fbc790e3/model.safetensors
+2026-06-11 16:08:07,605 - INFO - Compiling model...
+2026-06-11 16:08:08,858 - INFO - When compiling, max context needs to be multiple of the patch size 32. Using max context = 64 instead.
+2026-06-11 16:08:08,858 - INFO - When compiling, max horizon needs to be multiple of the output patch size 128. Using max horizon = 128 instead.
+2026-06-11 16:08:08,859 - INFO - Testing TimesFM on unseen Test set...
+2026-06-11 16:35:51,156 - INFO - *** TimesFM RESULTS (Seq: 60) | RMSE: 0.1430 | MAE: 0.0941 ***
+
+2026-06-11 16:35:51,432 - INFO - --> Initializing TimeMoE (Trainable: False)
+2026-06-11 16:35:54,806 - INFO - Testing TimeMoE on unseen Test set...
+2026-06-11 16:43:44,894 - INFO - *** TimeMoE RESULTS (Seq: 60) | RMSE: 0.1678 | MAE: 0.1086 ***
+
+2026-06-11 16:43:45,101 - INFO - 
+==================================================
+EVALUATING SEQUENCE LENGTH: 90
+==================================================
+2026-06-11 16:43:45,102 - INFO - --> Initializing TimesNet (Trainable: True)
+2026-06-11 16:43:46,984 - INFO - Training TimesNet...
+2026-06-11 16:44:02,284 - INFO - Epoch 1 -> Val Loss improved to 0.0316. Saved checkpoint!
+2026-06-11 16:44:02,285 - INFO - Epoch 1 | Train Loss: 0.0121 | Val Loss: 0.0316
+2026-06-11 16:44:16,648 - INFO - Epoch 2 | Train: 0.0068 | Val: 0.0360 (No improvement: 1/5)
+2026-06-11 16:44:16,648 - INFO - Epoch 2 | Train Loss: 0.0068 | Val Loss: 0.0360
+2026-06-11 16:44:30,840 - INFO - Epoch 3 | Train: 0.0050 | Val: 0.0391 (No improvement: 2/5)
+2026-06-11 16:44:30,841 - INFO - Epoch 3 | Train Loss: 0.0050 | Val Loss: 0.0391
+2026-06-11 16:44:44,998 - INFO - Epoch 4 | Train: 0.0041 | Val: 0.0416 (No improvement: 3/5)
+2026-06-11 16:44:44,999 - INFO - Epoch 4 | Train Loss: 0.0041 | Val Loss: 0.0416
+2026-06-11 16:44:59,313 - INFO - Epoch 5 | Train: 0.0036 | Val: 0.0440 (No improvement: 4/5)
+2026-06-11 16:44:59,314 - INFO - Epoch 5 | Train Loss: 0.0036 | Val Loss: 0.0440
+2026-06-11 16:45:13,673 - INFO - Epoch 6 | Train: 0.0032 | Val: 0.0437 (No improvement: 5/5)
+2026-06-11 16:45:13,673 - INFO - 🛑 EARLY STOPPING TRIGGERED 6!
+2026-06-11 16:45:13,674 - INFO - Testing TimesNet on unseen Test set...
+2026-06-11 16:45:14,859 - INFO - *** TimesNet RESULTS (Seq: 90) | RMSE: 0.2145 | MAE: 0.1383 ***
+
+2026-06-11 16:45:15,139 - INFO - --> Initializing TimeXer (Trainable: True)
+2026-06-11 16:45:15,176 - INFO - Training TimeXer...
+2026-06-11 16:45:17,720 - INFO - Epoch 1 -> Val Loss improved to 0.0251. Saved checkpoint!
+2026-06-11 16:45:17,720 - INFO - Epoch 1 | Train Loss: 0.0122 | Val Loss: 0.0251
+2026-06-11 16:45:20,216 - INFO - Epoch 2 -> Val Loss improved to 0.0219. Saved checkpoint!
+2026-06-11 16:45:20,216 - INFO - Epoch 2 | Train Loss: 0.0103 | Val Loss: 0.0219
+2026-06-11 16:45:22,666 - INFO - Epoch 3 | Train: 0.0100 | Val: 0.0244 (No improvement: 1/5)
+2026-06-11 16:45:22,666 - INFO - Epoch 3 | Train Loss: 0.0100 | Val Loss: 0.0244
+2026-06-11 16:45:25,060 - INFO - Epoch 4 -> Val Loss improved to 0.0209. Saved checkpoint!
+2026-06-11 16:45:25,061 - INFO - Epoch 4 | Train Loss: 0.0099 | Val Loss: 0.0209
+2026-06-11 16:45:27,539 - INFO - Epoch 5 | Train: 0.0097 | Val: 0.0230 (No improvement: 1/5)
+2026-06-11 16:45:27,539 - INFO - Epoch 5 | Train Loss: 0.0097 | Val Loss: 0.0230
+2026-06-11 16:45:29,910 - INFO - Epoch 6 | Train: 0.0094 | Val: 0.0218 (No improvement: 2/5)
+2026-06-11 16:45:29,910 - INFO - Epoch 6 | Train Loss: 0.0094 | Val Loss: 0.0218
+2026-06-11 16:45:32,347 - INFO - Epoch 7 | Train: 0.0093 | Val: 0.0210 (No improvement: 3/5)
+2026-06-11 16:45:32,348 - INFO - Epoch 7 | Train Loss: 0.0093 | Val Loss: 0.0210
+2026-06-11 16:45:34,785 - INFO - Epoch 8 | Train: 0.0091 | Val: 0.0222 (No improvement: 4/5)
+2026-06-11 16:45:34,785 - INFO - Epoch 8 | Train Loss: 0.0091 | Val Loss: 0.0222
+2026-06-11 16:45:37,230 - INFO - Epoch 9 | Train: 0.0088 | Val: 0.0216 (No improvement: 5/5)
+2026-06-11 16:45:37,231 - INFO - 🛑 EARLY STOPPING TRIGGERED 9!
+2026-06-11 16:45:37,231 - INFO - Testing TimeXer on unseen Test set...
+2026-06-11 16:45:37,690 - INFO - *** TimeXer RESULTS (Seq: 90) | RMSE: 0.1529 | MAE: 0.1031 ***
+
+2026-06-11 16:45:38,011 - INFO - --> Initializing TimeMixer (Trainable: True)
+2026-06-11 16:45:38,029 - INFO - Training TimeMixer...
+2026-06-11 16:45:59,338 - INFO - Epoch 1 -> Val Loss improved to 0.0290. Saved checkpoint!
+2026-06-11 16:45:59,339 - INFO - Epoch 1 | Train Loss: 0.0144 | Val Loss: 0.0290
+2026-06-11 16:46:20,672 - INFO - Epoch 2 -> Val Loss improved to 0.0219. Saved checkpoint!
+2026-06-11 16:46:20,672 - INFO - Epoch 2 | Train Loss: 0.0098 | Val Loss: 0.0219
+2026-06-11 16:46:41,927 - INFO - Epoch 3 -> Val Loss improved to 0.0210. Saved checkpoint!
+2026-06-11 16:46:41,927 - INFO - Epoch 3 | Train Loss: 0.0089 | Val Loss: 0.0210
+2026-06-11 16:47:03,179 - INFO - Epoch 4 -> Val Loss improved to 0.0204. Saved checkpoint!
+2026-06-11 16:47:03,179 - INFO - Epoch 4 | Train Loss: 0.0087 | Val Loss: 0.0204
+2026-06-11 16:47:24,429 - INFO - Epoch 5 -> Val Loss improved to 0.0201. Saved checkpoint!
+2026-06-11 16:47:24,429 - INFO - Epoch 5 | Train Loss: 0.0086 | Val Loss: 0.0201
+2026-06-11 16:47:45,864 - INFO - Epoch 6 -> Val Loss improved to 0.0199. Saved checkpoint!
+2026-06-11 16:47:45,865 - INFO - Epoch 6 | Train Loss: 0.0085 | Val Loss: 0.0199
+2026-06-11 16:48:07,330 - INFO - Epoch 7 -> Val Loss improved to 0.0196. Saved checkpoint!
+2026-06-11 16:48:07,330 - INFO - Epoch 7 | Train Loss: 0.0084 | Val Loss: 0.0196
+2026-06-11 16:48:28,917 - INFO - Epoch 8 -> Val Loss improved to 0.0196. Saved checkpoint!
+2026-06-11 16:48:28,917 - INFO - Epoch 8 | Train Loss: 0.0083 | Val Loss: 0.0196
+2026-06-11 16:48:50,392 - INFO - Epoch 9 -> Val Loss improved to 0.0192. Saved checkpoint!
+2026-06-11 16:48:50,393 - INFO - Epoch 9 | Train Loss: 0.0082 | Val Loss: 0.0192
+2026-06-11 16:49:11,950 - INFO - Epoch 10 -> Val Loss improved to 0.0189. Saved checkpoint!
+2026-06-11 16:49:11,950 - INFO - Epoch 10 | Train Loss: 0.0082 | Val Loss: 0.0189
+2026-06-11 16:49:33,515 - INFO - Epoch 11 | Train: 0.0082 | Val: 0.0192 (No improvement: 1/5)
+2026-06-11 16:49:33,516 - INFO - Epoch 11 | Train Loss: 0.0082 | Val Loss: 0.0192
+2026-06-11 16:49:55,062 - INFO - Epoch 12 -> Val Loss improved to 0.0186. Saved checkpoint!
+2026-06-11 16:49:55,063 - INFO - Epoch 12 | Train Loss: 0.0082 | Val Loss: 0.0186
+2026-06-11 16:50:16,461 - INFO - Epoch 13 | Train: 0.0081 | Val: 0.0188 (No improvement: 1/5)
+2026-06-11 16:50:16,462 - INFO - Epoch 13 | Train Loss: 0.0081 | Val Loss: 0.0188
+2026-06-11 16:50:37,925 - INFO - Epoch 14 -> Val Loss improved to 0.0184. Saved checkpoint!
+2026-06-11 16:50:37,925 - INFO - Epoch 14 | Train Loss: 0.0081 | Val Loss: 0.0184
+2026-06-11 16:50:59,470 - INFO - Epoch 15 | Train: 0.0080 | Val: 0.0184 (No improvement: 1/5)
+2026-06-11 16:50:59,470 - INFO - Epoch 15 | Train Loss: 0.0080 | Val Loss: 0.0184
+2026-06-11 16:51:20,937 - INFO - Epoch 16 -> Val Loss improved to 0.0181. Saved checkpoint!
+2026-06-11 16:51:20,938 - INFO - Epoch 16 | Train Loss: 0.0080 | Val Loss: 0.0181
+2026-06-11 16:51:42,355 - INFO - Epoch 17 | Train: 0.0080 | Val: 0.0186 (No improvement: 1/5)
+2026-06-11 16:51:42,355 - INFO - Epoch 17 | Train Loss: 0.0080 | Val Loss: 0.0186
+2026-06-11 16:52:03,919 - INFO - Epoch 18 -> Val Loss improved to 0.0180. Saved checkpoint!
+2026-06-11 16:52:03,919 - INFO - Epoch 18 | Train Loss: 0.0080 | Val Loss: 0.0180
+2026-06-11 16:52:25,308 - INFO - Epoch 19 | Train: 0.0080 | Val: 0.0184 (No improvement: 1/5)
+2026-06-11 16:52:25,309 - INFO - Epoch 19 | Train Loss: 0.0080 | Val Loss: 0.0184
+2026-06-11 16:52:46,526 - INFO - Epoch 20 | Train: 0.0079 | Val: 0.0182 (No improvement: 2/5)
+2026-06-11 16:52:46,527 - INFO - Epoch 20 | Train Loss: 0.0079 | Val Loss: 0.0182
+2026-06-11 16:53:07,762 - INFO - Epoch 21 | Train: 0.0079 | Val: 0.0181 (No improvement: 3/5)
+2026-06-11 16:53:07,763 - INFO - Epoch 21 | Train Loss: 0.0079 | Val Loss: 0.0181
+2026-06-11 16:53:29,287 - INFO - Epoch 22 -> Val Loss improved to 0.0176. Saved checkpoint!
+2026-06-11 16:53:29,287 - INFO - Epoch 22 | Train Loss: 0.0079 | Val Loss: 0.0176
+2026-06-11 16:53:50,785 - INFO - Epoch 23 | Train: 0.0078 | Val: 0.0177 (No improvement: 1/5)
+2026-06-11 16:53:50,785 - INFO - Epoch 23 | Train Loss: 0.0078 | Val Loss: 0.0177
+2026-06-11 16:54:12,396 - INFO - Epoch 24 -> Val Loss improved to 0.0176. Saved checkpoint!
+2026-06-11 16:54:12,396 - INFO - Epoch 24 | Train Loss: 0.0078 | Val Loss: 0.0176
+2026-06-11 16:54:33,940 - INFO - Epoch 25 -> Val Loss improved to 0.0174. Saved checkpoint!
+2026-06-11 16:54:33,940 - INFO - Epoch 25 | Train Loss: 0.0078 | Val Loss: 0.0174
+2026-06-11 16:54:55,462 - INFO - Epoch 26 | Train: 0.0078 | Val: 0.0175 (No improvement: 1/5)
+2026-06-11 16:54:55,463 - INFO - Epoch 26 | Train Loss: 0.0078 | Val Loss: 0.0175
+2026-06-11 16:55:16,986 - INFO - Epoch 27 | Train: 0.0078 | Val: 0.0177 (No improvement: 2/5)
+2026-06-11 16:55:16,986 - INFO - Epoch 27 | Train Loss: 0.0078 | Val Loss: 0.0177
+2026-06-11 16:55:38,452 - INFO - Epoch 28 | Train: 0.0077 | Val: 0.0179 (No improvement: 3/5)
+2026-06-11 16:55:38,452 - INFO - Epoch 28 | Train Loss: 0.0077 | Val Loss: 0.0179
+2026-06-11 16:55:59,961 - INFO - Epoch 29 | Train: 0.0077 | Val: 0.0176 (No improvement: 4/5)
+2026-06-11 16:55:59,961 - INFO - Epoch 29 | Train Loss: 0.0077 | Val Loss: 0.0176
+2026-06-11 16:56:21,467 - INFO - Epoch 30 -> Val Loss improved to 0.0174. Saved checkpoint!
+2026-06-11 16:56:21,467 - INFO - Epoch 30 | Train Loss: 0.0077 | Val Loss: 0.0174
+2026-06-11 16:56:43,017 - INFO - Epoch 31 | Train: 0.0077 | Val: 0.0174 (No improvement: 1/5)
+2026-06-11 16:56:43,018 - INFO - Epoch 31 | Train Loss: 0.0077 | Val Loss: 0.0174
+2026-06-11 16:57:04,539 - INFO - Epoch 32 | Train: 0.0077 | Val: 0.0174 (No improvement: 2/5)
+2026-06-11 16:57:04,539 - INFO - Epoch 32 | Train Loss: 0.0077 | Val Loss: 0.0174
+2026-06-11 16:57:25,997 - INFO - Epoch 33 | Train: 0.0077 | Val: 0.0174 (No improvement: 3/5)
+2026-06-11 16:57:25,997 - INFO - Epoch 33 | Train Loss: 0.0077 | Val Loss: 0.0174
+2026-06-11 16:57:47,464 - INFO - Epoch 34 | Train: 0.0077 | Val: 0.0177 (No improvement: 4/5)
+2026-06-11 16:57:47,465 - INFO - Epoch 34 | Train Loss: 0.0077 | Val Loss: 0.0177
+2026-06-11 16:58:08,951 - INFO - Epoch 35 | Train: 0.0077 | Val: 0.0176 (No improvement: 5/5)
+2026-06-11 16:58:08,951 - INFO - 🛑 EARLY STOPPING TRIGGERED 35!
+2026-06-11 16:58:08,952 - INFO - Testing TimeMixer on unseen Test set...
+2026-06-11 16:58:10,188 - INFO - *** TimeMixer RESULTS (Seq: 90) | RMSE: 0.1391 | MAE: 0.0928 ***
+
+2026-06-11 16:58:10,691 - INFO - --> Initializing ETSformer (Trainable: True)
+2026-06-11 16:58:10,711 - INFO - Training ETSformer...
+2026-06-11 16:58:13,873 - INFO - Epoch 1 -> Val Loss improved to 0.0763. Saved checkpoint!
+2026-06-11 16:58:13,874 - INFO - Epoch 1 | Train Loss: 0.3097 | Val Loss: 0.0763
+2026-06-11 16:58:16,918 - INFO - Epoch 2 -> Val Loss improved to 0.0561. Saved checkpoint!
+2026-06-11 16:58:16,918 - INFO - Epoch 2 | Train Loss: 0.2185 | Val Loss: 0.0561
+2026-06-11 16:58:19,881 - INFO - Epoch 3 -> Val Loss improved to 0.0476. Saved checkpoint!
+2026-06-11 16:58:19,881 - INFO - Epoch 3 | Train Loss: 0.1851 | Val Loss: 0.0476
+2026-06-11 16:58:22,963 - INFO - Epoch 4 -> Val Loss improved to 0.0419. Saved checkpoint!
+2026-06-11 16:58:22,963 - INFO - Epoch 4 | Train Loss: 0.1673 | Val Loss: 0.0419
+2026-06-11 16:58:26,053 - INFO - Epoch 5 -> Val Loss improved to 0.0386. Saved checkpoint!
+2026-06-11 16:58:26,053 - INFO - Epoch 5 | Train Loss: 0.1533 | Val Loss: 0.0386
+2026-06-11 16:58:28,979 - INFO - Epoch 6 -> Val Loss improved to 0.0371. Saved checkpoint!
+2026-06-11 16:58:28,979 - INFO - Epoch 6 | Train Loss: 0.1455 | Val Loss: 0.0371
+2026-06-11 16:58:31,771 - INFO - Epoch 7 -> Val Loss improved to 0.0347. Saved checkpoint!
+2026-06-11 16:58:31,771 - INFO - Epoch 7 | Train Loss: 0.1379 | Val Loss: 0.0347
+2026-06-11 16:58:34,727 - INFO - Epoch 8 -> Val Loss improved to 0.0342. Saved checkpoint!
+2026-06-11 16:58:34,727 - INFO - Epoch 8 | Train Loss: 0.1327 | Val Loss: 0.0342
+2026-06-11 16:58:37,650 - INFO - Epoch 9 -> Val Loss improved to 0.0334. Saved checkpoint!
+2026-06-11 16:58:37,651 - INFO - Epoch 9 | Train Loss: 0.1264 | Val Loss: 0.0334
+2026-06-11 16:58:40,640 - INFO - Epoch 10 -> Val Loss improved to 0.0320. Saved checkpoint!
+2026-06-11 16:58:40,641 - INFO - Epoch 10 | Train Loss: 0.1225 | Val Loss: 0.0320
+2026-06-11 16:58:43,598 - INFO - Epoch 11 -> Val Loss improved to 0.0318. Saved checkpoint!
+2026-06-11 16:58:43,599 - INFO - Epoch 11 | Train Loss: 0.1179 | Val Loss: 0.0318
+2026-06-11 16:58:46,603 - INFO - Epoch 12 -> Val Loss improved to 0.0312. Saved checkpoint!
+2026-06-11 16:58:46,603 - INFO - Epoch 12 | Train Loss: 0.1147 | Val Loss: 0.0312
+2026-06-11 16:58:49,789 - INFO - Epoch 13 | Train: 0.1109 | Val: 0.0314 (No improvement: 1/5)
+2026-06-11 16:58:49,790 - INFO - Epoch 13 | Train Loss: 0.1109 | Val Loss: 0.0314
+2026-06-11 16:58:52,785 - INFO - Epoch 14 -> Val Loss improved to 0.0302. Saved checkpoint!
+2026-06-11 16:58:52,786 - INFO - Epoch 14 | Train Loss: 0.1090 | Val Loss: 0.0302
+2026-06-11 16:58:55,659 - INFO - Epoch 15 -> Val Loss improved to 0.0294. Saved checkpoint!
+2026-06-11 16:58:55,659 - INFO - Epoch 15 | Train Loss: 0.1071 | Val Loss: 0.0294
+2026-06-11 16:58:58,642 - INFO - Epoch 16 -> Val Loss improved to 0.0284. Saved checkpoint!
+2026-06-11 16:58:58,642 - INFO - Epoch 16 | Train Loss: 0.1050 | Val Loss: 0.0284
+2026-06-11 16:59:01,720 - INFO - Epoch 17 | Train: 0.1011 | Val: 0.0291 (No improvement: 1/5)
+2026-06-11 16:59:01,720 - INFO - Epoch 17 | Train Loss: 0.1011 | Val Loss: 0.0291
+2026-06-11 16:59:04,802 - INFO - Epoch 18 | Train: 0.1007 | Val: 0.0287 (No improvement: 2/5)
+2026-06-11 16:59:04,802 - INFO - Epoch 18 | Train Loss: 0.1007 | Val Loss: 0.0287
+2026-06-11 16:59:07,668 - INFO - Epoch 19 | Train: 0.0968 | Val: 0.0284 (No improvement: 3/5)
+2026-06-11 16:59:07,668 - INFO - Epoch 19 | Train Loss: 0.0968 | Val Loss: 0.0284
+2026-06-11 16:59:10,531 - INFO - Epoch 20 -> Val Loss improved to 0.0284. Saved checkpoint!
+2026-06-11 16:59:10,531 - INFO - Epoch 20 | Train Loss: 0.0972 | Val Loss: 0.0284
+2026-06-11 16:59:13,505 - INFO - Epoch 21 | Train: 0.0949 | Val: 0.0287 (No improvement: 1/5)
+2026-06-11 16:59:13,505 - INFO - Epoch 21 | Train Loss: 0.0949 | Val Loss: 0.0287
+2026-06-11 16:59:16,528 - INFO - Epoch 22 -> Val Loss improved to 0.0275. Saved checkpoint!
+2026-06-11 16:59:16,528 - INFO - Epoch 22 | Train Loss: 0.0939 | Val Loss: 0.0275
+2026-06-11 16:59:19,751 - INFO - Epoch 23 -> Val Loss improved to 0.0274. Saved checkpoint!
+2026-06-11 16:59:19,751 - INFO - Epoch 23 | Train Loss: 0.0920 | Val Loss: 0.0274
+2026-06-11 16:59:22,681 - INFO - Epoch 24 | Train: 0.0921 | Val: 0.0277 (No improvement: 1/5)
+2026-06-11 16:59:22,682 - INFO - Epoch 24 | Train Loss: 0.0921 | Val Loss: 0.0277
+2026-06-11 16:59:25,738 - INFO - Epoch 25 | Train: 0.0900 | Val: 0.0277 (No improvement: 2/5)
+2026-06-11 16:59:25,738 - INFO - Epoch 25 | Train Loss: 0.0900 | Val Loss: 0.0277
+2026-06-11 16:59:28,772 - INFO - Epoch 26 | Train: 0.0890 | Val: 0.0284 (No improvement: 3/5)
+2026-06-11 16:59:28,774 - INFO - Epoch 26 | Train Loss: 0.0890 | Val Loss: 0.0284
+2026-06-11 16:59:31,770 - INFO - Epoch 27 | Train: 0.0882 | Val: 0.0275 (No improvement: 4/5)
+2026-06-11 16:59:31,771 - INFO - Epoch 27 | Train Loss: 0.0882 | Val Loss: 0.0275
+2026-06-11 16:59:34,829 - INFO - Epoch 28 | Train: 0.0882 | Val: 0.0280 (No improvement: 5/5)
+2026-06-11 16:59:34,830 - INFO - 🛑 EARLY STOPPING TRIGGERED 28!
+2026-06-11 16:59:34,830 - INFO - Testing ETSformer on unseen Test set...
+2026-06-11 16:59:35,335 - INFO - *** ETSformer RESULTS (Seq: 90) | RMSE: 0.1692 | MAE: 0.1209 ***
+
+2026-06-11 16:59:35,603 - INFO - --> Initializing DLinear (Trainable: True)
+2026-06-11 16:59:35,605 - INFO - Training DLinear...
+2026-06-11 16:59:36,604 - INFO - Epoch 1 -> Val Loss improved to 0.0395. Saved checkpoint!
+2026-06-11 16:59:36,605 - INFO - Epoch 1 | Train Loss: 0.0185 | Val Loss: 0.0395
+2026-06-11 16:59:37,556 - INFO - Epoch 2 -> Val Loss improved to 0.0372. Saved checkpoint!
+2026-06-11 16:59:37,557 - INFO - Epoch 2 | Train Loss: 0.0160 | Val Loss: 0.0372
+2026-06-11 16:59:38,537 - INFO - Epoch 3 -> Val Loss improved to 0.0354. Saved checkpoint!
+2026-06-11 16:59:38,537 - INFO - Epoch 3 | Train Loss: 0.0148 | Val Loss: 0.0354
+2026-06-11 16:59:39,560 - INFO - Epoch 4 -> Val Loss improved to 0.0333. Saved checkpoint!
+2026-06-11 16:59:39,560 - INFO - Epoch 4 | Train Loss: 0.0138 | Val Loss: 0.0333
+2026-06-11 16:59:40,538 - INFO - Epoch 5 -> Val Loss improved to 0.0316. Saved checkpoint!
+2026-06-11 16:59:40,539 - INFO - Epoch 5 | Train Loss: 0.0129 | Val Loss: 0.0316
+2026-06-11 16:59:41,520 - INFO - Epoch 6 -> Val Loss improved to 0.0309. Saved checkpoint!
+2026-06-11 16:59:41,521 - INFO - Epoch 6 | Train Loss: 0.0122 | Val Loss: 0.0309
+2026-06-11 16:59:42,514 - INFO - Epoch 7 -> Val Loss improved to 0.0292. Saved checkpoint!
+2026-06-11 16:59:42,514 - INFO - Epoch 7 | Train Loss: 0.0117 | Val Loss: 0.0292
+2026-06-11 16:59:43,478 - INFO - Epoch 8 | Train: 0.0113 | Val: 0.0292 (No improvement: 1/5)
+2026-06-11 16:59:43,479 - INFO - Epoch 8 | Train Loss: 0.0113 | Val Loss: 0.0292
+2026-06-11 16:59:44,512 - INFO - Epoch 9 -> Val Loss improved to 0.0284. Saved checkpoint!
+2026-06-11 16:59:44,513 - INFO - Epoch 9 | Train Loss: 0.0108 | Val Loss: 0.0284
+2026-06-11 16:59:45,479 - INFO - Epoch 10 -> Val Loss improved to 0.0267. Saved checkpoint!
+2026-06-11 16:59:45,479 - INFO - Epoch 10 | Train Loss: 0.0104 | Val Loss: 0.0267
+2026-06-11 16:59:46,459 - INFO - Epoch 11 -> Val Loss improved to 0.0259. Saved checkpoint!
+2026-06-11 16:59:46,459 - INFO - Epoch 11 | Train Loss: 0.0102 | Val Loss: 0.0259
+2026-06-11 16:59:47,488 - INFO - Epoch 12 | Train: 0.0100 | Val: 0.0259 (No improvement: 1/5)
+2026-06-11 16:59:47,489 - INFO - Epoch 12 | Train Loss: 0.0100 | Val Loss: 0.0259
+2026-06-11 16:59:48,513 - INFO - Epoch 13 -> Val Loss improved to 0.0253. Saved checkpoint!
+2026-06-11 16:59:48,514 - INFO - Epoch 13 | Train Loss: 0.0097 | Val Loss: 0.0253
+2026-06-11 16:59:49,490 - INFO - Epoch 14 -> Val Loss improved to 0.0250. Saved checkpoint!
+2026-06-11 16:59:49,491 - INFO - Epoch 14 | Train Loss: 0.0095 | Val Loss: 0.0250
+2026-06-11 16:59:50,509 - INFO - Epoch 15 -> Val Loss improved to 0.0243. Saved checkpoint!
+2026-06-11 16:59:50,509 - INFO - Epoch 15 | Train Loss: 0.0093 | Val Loss: 0.0243
+2026-06-11 16:59:51,536 - INFO - Epoch 16 | Train: 0.0093 | Val: 0.0243 (No improvement: 1/5)
+2026-06-11 16:59:51,537 - INFO - Epoch 16 | Train Loss: 0.0093 | Val Loss: 0.0243
+2026-06-11 16:59:52,459 - INFO - Epoch 17 -> Val Loss improved to 0.0242. Saved checkpoint!
+2026-06-11 16:59:52,459 - INFO - Epoch 17 | Train Loss: 0.0091 | Val Loss: 0.0242
+2026-06-11 16:59:53,442 - INFO - Epoch 18 -> Val Loss improved to 0.0239. Saved checkpoint!
+2026-06-11 16:59:53,442 - INFO - Epoch 18 | Train Loss: 0.0091 | Val Loss: 0.0239
+2026-06-11 16:59:54,457 - INFO - Epoch 19 -> Val Loss improved to 0.0235. Saved checkpoint!
+2026-06-11 16:59:54,457 - INFO - Epoch 19 | Train Loss: 0.0089 | Val Loss: 0.0235
+2026-06-11 16:59:55,408 - INFO - Epoch 20 | Train: 0.0088 | Val: 0.0242 (No improvement: 1/5)
+2026-06-11 16:59:55,409 - INFO - Epoch 20 | Train Loss: 0.0088 | Val Loss: 0.0242
+2026-06-11 16:59:56,392 - INFO - Epoch 21 -> Val Loss improved to 0.0229. Saved checkpoint!
+2026-06-11 16:59:56,393 - INFO - Epoch 21 | Train Loss: 0.0088 | Val Loss: 0.0229
+2026-06-11 16:59:57,363 - INFO - Epoch 22 -> Val Loss improved to 0.0223. Saved checkpoint!
+2026-06-11 16:59:57,363 - INFO - Epoch 22 | Train Loss: 0.0087 | Val Loss: 0.0223
+2026-06-11 16:59:58,380 - INFO - Epoch 23 | Train: 0.0086 | Val: 0.0236 (No improvement: 1/5)
+2026-06-11 16:59:58,380 - INFO - Epoch 23 | Train Loss: 0.0086 | Val Loss: 0.0236
+2026-06-11 16:59:59,353 - INFO - Epoch 24 | Train: 0.0085 | Val: 0.0230 (No improvement: 2/5)
+2026-06-11 16:59:59,353 - INFO - Epoch 24 | Train Loss: 0.0085 | Val Loss: 0.0230
+2026-06-11 17:00:00,323 - INFO - Epoch 25 | Train: 0.0086 | Val: 0.0227 (No improvement: 3/5)
+2026-06-11 17:00:00,324 - INFO - Epoch 25 | Train Loss: 0.0086 | Val Loss: 0.0227
+2026-06-11 17:00:01,309 - INFO - Epoch 26 | Train: 0.0085 | Val: 0.0224 (No improvement: 4/5)
+2026-06-11 17:00:01,310 - INFO - Epoch 26 | Train Loss: 0.0085 | Val Loss: 0.0224
+2026-06-11 17:00:02,320 - INFO - Epoch 27 | Train: 0.0085 | Val: 0.0224 (No improvement: 5/5)
+2026-06-11 17:00:02,321 - INFO - 🛑 EARLY STOPPING TRIGGERED 27!
+2026-06-11 17:00:02,321 - INFO - Testing DLinear on unseen Test set...
+2026-06-11 17:00:02,722 - INFO - *** DLinear RESULTS (Seq: 90) | RMSE: 0.1511 | MAE: 0.1004 ***
+
+2026-06-11 17:00:02,999 - INFO - --> Initializing Autoformer (Trainable: True)
+2026-06-11 17:00:03,037 - INFO - Training Autoformer...
+2026-06-11 17:00:06,440 - INFO - Epoch 1 -> Val Loss improved to 0.0504. Saved checkpoint!
+2026-06-11 17:00:06,440 - INFO - Epoch 1 | Train Loss: 0.0966 | Val Loss: 0.0504
+2026-06-11 17:00:09,738 - INFO - Epoch 2 -> Val Loss improved to 0.0451. Saved checkpoint!
+2026-06-11 17:00:09,738 - INFO - Epoch 2 | Train Loss: 0.0397 | Val Loss: 0.0451
+2026-06-11 17:00:12,983 - INFO - Epoch 3 -> Val Loss improved to 0.0440. Saved checkpoint!
+2026-06-11 17:00:12,983 - INFO - Epoch 3 | Train Loss: 0.0341 | Val Loss: 0.0440
+2026-06-11 17:00:16,271 - INFO - Epoch 4 -> Val Loss improved to 0.0426. Saved checkpoint!
+2026-06-11 17:00:16,271 - INFO - Epoch 4 | Train Loss: 0.0304 | Val Loss: 0.0426
+2026-06-11 17:00:19,389 - INFO - Epoch 5 | Train: 0.0278 | Val: 0.0430 (No improvement: 1/5)
+2026-06-11 17:00:19,390 - INFO - Epoch 5 | Train Loss: 0.0278 | Val Loss: 0.0430
+2026-06-11 17:00:22,762 - INFO - Epoch 6 -> Val Loss improved to 0.0423. Saved checkpoint!
+2026-06-11 17:00:22,763 - INFO - Epoch 6 | Train Loss: 0.0264 | Val Loss: 0.0423
+2026-06-11 17:00:26,013 - INFO - Epoch 7 -> Val Loss improved to 0.0421. Saved checkpoint!
+2026-06-11 17:00:26,013 - INFO - Epoch 7 | Train Loss: 0.0253 | Val Loss: 0.0421
+2026-06-11 17:00:29,204 - INFO - Epoch 8 | Train: 0.0244 | Val: 0.0426 (No improvement: 1/5)
+2026-06-11 17:00:29,204 - INFO - Epoch 8 | Train Loss: 0.0244 | Val Loss: 0.0426
+2026-06-11 17:00:32,422 - INFO - Epoch 9 -> Val Loss improved to 0.0419. Saved checkpoint!
+2026-06-11 17:00:32,422 - INFO - Epoch 9 | Train Loss: 0.0237 | Val Loss: 0.0419
+2026-06-11 17:00:35,642 - INFO - Epoch 10 -> Val Loss improved to 0.0417. Saved checkpoint!
+2026-06-11 17:00:35,643 - INFO - Epoch 10 | Train Loss: 0.0230 | Val Loss: 0.0417
+2026-06-11 17:00:38,870 - INFO - Epoch 11 | Train: 0.0221 | Val: 0.0418 (No improvement: 1/5)
+2026-06-11 17:00:38,871 - INFO - Epoch 11 | Train Loss: 0.0221 | Val Loss: 0.0418
+2026-06-11 17:00:42,112 - INFO - Epoch 12 | Train: 0.0214 | Val: 0.0428 (No improvement: 2/5)
+2026-06-11 17:00:42,113 - INFO - Epoch 12 | Train Loss: 0.0214 | Val Loss: 0.0428
+2026-06-11 17:00:45,319 - INFO - Epoch 13 | Train: 0.0207 | Val: 0.0426 (No improvement: 3/5)
+2026-06-11 17:00:45,321 - INFO - Epoch 13 | Train Loss: 0.0207 | Val Loss: 0.0426
+2026-06-11 17:00:48,670 - INFO - Epoch 14 | Train: 0.0199 | Val: 0.0424 (No improvement: 4/5)
+2026-06-11 17:00:48,670 - INFO - Epoch 14 | Train Loss: 0.0199 | Val Loss: 0.0424
+2026-06-11 17:00:51,916 - INFO - Epoch 15 | Train: 0.0190 | Val: 0.0422 (No improvement: 5/5)
+2026-06-11 17:00:51,917 - INFO - 🛑 EARLY STOPPING TRIGGERED 15!
+2026-06-11 17:00:51,917 - INFO - Testing Autoformer on unseen Test set...
+2026-06-11 17:00:52,483 - INFO - *** Autoformer RESULTS (Seq: 90) | RMSE: 0.2346 | MAE: 0.1557 ***
+
+2026-06-11 17:00:52,761 - INFO - --> Initializing PatchTST (Trainable: True)
+2026-06-11 17:00:52,780 - INFO - Training PatchTST...
+2026-06-11 17:00:56,251 - INFO - Epoch 1 -> Val Loss improved to 0.0192. Saved checkpoint!
+2026-06-11 17:00:56,251 - INFO - Epoch 1 | Train Loss: 0.0109 | Val Loss: 0.0192
+2026-06-11 17:00:59,598 - INFO - Epoch 2 | Train: 0.0095 | Val: 0.0199 (No improvement: 1/5)
+2026-06-11 17:00:59,599 - INFO - Epoch 2 | Train Loss: 0.0095 | Val Loss: 0.0199
+2026-06-11 17:01:03,009 - INFO - Epoch 3 -> Val Loss improved to 0.0185. Saved checkpoint!
+2026-06-11 17:01:03,009 - INFO - Epoch 3 | Train Loss: 0.0093 | Val Loss: 0.0185
+2026-06-11 17:01:06,367 - INFO - Epoch 4 | Train: 0.0091 | Val: 0.0192 (No improvement: 1/5)
+2026-06-11 17:01:06,368 - INFO - Epoch 4 | Train Loss: 0.0091 | Val Loss: 0.0192
+2026-06-11 17:01:09,757 - INFO - Epoch 5 -> Val Loss improved to 0.0178. Saved checkpoint!
+2026-06-11 17:01:09,757 - INFO - Epoch 5 | Train Loss: 0.0089 | Val Loss: 0.0178
+2026-06-11 17:01:13,125 - INFO - Epoch 6 | Train: 0.0089 | Val: 0.0183 (No improvement: 1/5)
+2026-06-11 17:01:13,125 - INFO - Epoch 6 | Train Loss: 0.0089 | Val Loss: 0.0183
+2026-06-11 17:01:16,493 - INFO - Epoch 7 | Train: 0.0088 | Val: 0.0181 (No improvement: 2/5)
+2026-06-11 17:01:16,493 - INFO - Epoch 7 | Train Loss: 0.0088 | Val Loss: 0.0181
+2026-06-11 17:01:19,853 - INFO - Epoch 8 | Train: 0.0088 | Val: 0.0190 (No improvement: 3/5)
+2026-06-11 17:01:19,854 - INFO - Epoch 8 | Train Loss: 0.0088 | Val Loss: 0.0190
+2026-06-11 17:01:23,226 - INFO - Epoch 9 | Train: 0.0087 | Val: 0.0184 (No improvement: 4/5)
+2026-06-11 17:01:23,226 - INFO - Epoch 9 | Train Loss: 0.0087 | Val Loss: 0.0184
+2026-06-11 17:01:26,582 - INFO - Epoch 10 | Train: 0.0086 | Val: 0.0193 (No improvement: 5/5)
+2026-06-11 17:01:26,583 - INFO - 🛑 EARLY STOPPING TRIGGERED 10!
+2026-06-11 17:01:26,583 - INFO - Testing PatchTST on unseen Test set...
+2026-06-11 17:01:27,035 - INFO - *** PatchTST RESULTS (Seq: 90) | RMSE: 0.1368 | MAE: 0.0912 ***
+
+2026-06-11 17:01:27,313 - INFO - --> Initializing iTransformer (Trainable: True)
+2026-06-11 17:01:27,326 - INFO - Training iTransformer...
+2026-06-11 17:01:28,973 - INFO - Epoch 1 -> Val Loss improved to 0.0222. Saved checkpoint!
+2026-06-11 17:01:28,973 - INFO - Epoch 1 | Train Loss: 0.0113 | Val Loss: 0.0222
+2026-06-11 17:01:30,595 - INFO - Epoch 2 -> Val Loss improved to 0.0206. Saved checkpoint!
+2026-06-11 17:01:30,595 - INFO - Epoch 2 | Train Loss: 0.0090 | Val Loss: 0.0206
+2026-06-11 17:01:32,116 - INFO - Epoch 3 -> Val Loss improved to 0.0202. Saved checkpoint!
+2026-06-11 17:01:32,117 - INFO - Epoch 3 | Train Loss: 0.0087 | Val Loss: 0.0202
+2026-06-11 17:01:33,638 - INFO - Epoch 4 | Train: 0.0084 | Val: 0.0207 (No improvement: 1/5)
+2026-06-11 17:01:33,639 - INFO - Epoch 4 | Train Loss: 0.0084 | Val Loss: 0.0207
+2026-06-11 17:01:35,084 - INFO - Epoch 5 | Train: 0.0081 | Val: 0.0210 (No improvement: 2/5)
+2026-06-11 17:01:35,085 - INFO - Epoch 5 | Train Loss: 0.0081 | Val Loss: 0.0210
+2026-06-11 17:01:36,523 - INFO - Epoch 6 | Train: 0.0079 | Val: 0.0218 (No improvement: 3/5)
+2026-06-11 17:01:36,524 - INFO - Epoch 6 | Train Loss: 0.0079 | Val Loss: 0.0218
+2026-06-11 17:01:38,035 - INFO - Epoch 7 | Train: 0.0077 | Val: 0.0235 (No improvement: 4/5)
+2026-06-11 17:01:38,035 - INFO - Epoch 7 | Train Loss: 0.0077 | Val Loss: 0.0235
+2026-06-11 17:01:39,595 - INFO - Epoch 8 | Train: 0.0075 | Val: 0.0231 (No improvement: 5/5)
+2026-06-11 17:01:39,596 - INFO - 🛑 EARLY STOPPING TRIGGERED 8!
+2026-06-11 17:01:39,597 - INFO - Testing iTransformer on unseen Test set...
+2026-06-11 17:01:39,989 - INFO - *** iTransformer RESULTS (Seq: 90) | RMSE: 0.1404 | MAE: 0.0946 ***
+
+2026-06-11 17:01:40,256 - INFO - --> Initializing Chronos (Trainable: False)
+2026-06-11 17:01:42,152 - INFO - Testing Chronos on unseen Test set...
+2026-06-11 17:02:21,480 - INFO - *** Chronos RESULTS (Seq: 90) | RMSE: 0.1403 | MAE: 0.0936 ***
+
+2026-06-11 17:02:21,677 - INFO - --> Initializing TimesFM (Trainable: False)
+2026-06-11 17:02:21,961 - INFO - Downloading checkpoint from Hugging Face repo google/timesfm-2.5-200m-pytorch
+2026-06-11 17:02:23,801 - INFO - Loading checkpoint from: /home/nckh2/.cache/huggingface/hub/models--google--timesfm-2.5-200m-pytorch/snapshots/1d952420fba87f3c6dee4f240de0f1a0fbc790e3/model.safetensors
+2026-06-11 17:02:24,099 - INFO - Compiling model...
+2026-06-11 17:02:24,137 - INFO - When compiling, max context needs to be multiple of the patch size 32. Using max context = 96 instead.
+2026-06-11 17:02:24,137 - INFO - When compiling, max horizon needs to be multiple of the output patch size 128. Using max horizon = 128 instead.
+2026-06-11 17:02:24,137 - INFO - Testing TimesFM on unseen Test set...
+2026-06-11 17:32:16,914 - INFO - *** TimesFM RESULTS (Seq: 90) | RMSE: 0.1390 | MAE: 0.0921 ***
+
+2026-06-11 17:32:17,144 - INFO - --> Initializing TimeMoE (Trainable: False)
+2026-06-11 17:32:21,099 - INFO - Testing TimeMoE on unseen Test set...
+2026-06-11 17:41:09,969 - INFO - *** TimeMoE RESULTS (Seq: 90) | RMSE: 0.1753 | MAE: 0.1132 ***
+
+2026-06-11 17:41:10,185 - INFO - 
+==================================================
+EVALUATING SEQUENCE LENGTH: 120
+==================================================
+2026-06-11 17:41:10,186 - INFO - --> Initializing TimesNet (Trainable: True)
+2026-06-11 17:41:12,027 - INFO - Training TimesNet...
+2026-06-11 17:41:29,461 - INFO - Epoch 1 -> Val Loss improved to 0.0391. Saved checkpoint!
+2026-06-11 17:41:29,462 - INFO - Epoch 1 | Train Loss: 0.0127 | Val Loss: 0.0391
+2026-06-11 17:41:45,499 - INFO - Epoch 2 | Train: 0.0069 | Val: 0.0460 (No improvement: 1/5)
+2026-06-11 17:41:45,499 - INFO - Epoch 2 | Train Loss: 0.0069 | Val Loss: 0.0460
+2026-06-11 17:42:01,565 - INFO - Epoch 3 | Train: 0.0050 | Val: 0.0523 (No improvement: 2/5)
+2026-06-11 17:42:01,566 - INFO - Epoch 3 | Train Loss: 0.0050 | Val Loss: 0.0523
+2026-06-11 17:42:17,564 - INFO - Epoch 4 | Train: 0.0041 | Val: 0.0499 (No improvement: 3/5)
+2026-06-11 17:42:17,564 - INFO - Epoch 4 | Train Loss: 0.0041 | Val Loss: 0.0499
+2026-06-11 17:42:33,676 - INFO - Epoch 5 | Train: 0.0035 | Val: 0.0532 (No improvement: 4/5)
+2026-06-11 17:42:33,678 - INFO - Epoch 5 | Train Loss: 0.0035 | Val Loss: 0.0532
+2026-06-11 17:42:49,764 - INFO - Epoch 6 | Train: 0.0032 | Val: 0.0618 (No improvement: 5/5)
+2026-06-11 17:42:49,765 - INFO - 🛑 EARLY STOPPING TRIGGERED 6!
+2026-06-11 17:42:49,765 - INFO - Testing TimesNet on unseen Test set...
+2026-06-11 17:42:51,158 - INFO - *** TimesNet RESULTS (Seq: 120) | RMSE: 0.2456 | MAE: 0.1565 ***
+
+2026-06-11 17:42:51,448 - INFO - --> Initializing TimeXer (Trainable: True)
+2026-06-11 17:42:51,472 - INFO - Training TimeXer...
+2026-06-11 17:42:54,233 - INFO - Epoch 1 -> Val Loss improved to 0.0246. Saved checkpoint!
+2026-06-11 17:42:54,233 - INFO - Epoch 1 | Train Loss: 0.0137 | Val Loss: 0.0246
+2026-06-11 17:42:56,999 - INFO - Epoch 2 -> Val Loss improved to 0.0220. Saved checkpoint!
+2026-06-11 17:42:57,000 - INFO - Epoch 2 | Train Loss: 0.0111 | Val Loss: 0.0220
+2026-06-11 17:42:59,737 - INFO - Epoch 3 -> Val Loss improved to 0.0214. Saved checkpoint!
+2026-06-11 17:42:59,738 - INFO - Epoch 3 | Train Loss: 0.0105 | Val Loss: 0.0214
+2026-06-11 17:43:02,502 - INFO - Epoch 4 -> Val Loss improved to 0.0211. Saved checkpoint!
+2026-06-11 17:43:02,502 - INFO - Epoch 4 | Train Loss: 0.0102 | Val Loss: 0.0211
+2026-06-11 17:43:05,230 - INFO - Epoch 5 | Train: 0.0098 | Val: 0.0221 (No improvement: 1/5)
+2026-06-11 17:43:05,230 - INFO - Epoch 5 | Train Loss: 0.0098 | Val Loss: 0.0221
+2026-06-11 17:43:07,920 - INFO - Epoch 6 -> Val Loss improved to 0.0209. Saved checkpoint!
+2026-06-11 17:43:07,920 - INFO - Epoch 6 | Train Loss: 0.0096 | Val Loss: 0.0209
+2026-06-11 17:43:10,596 - INFO - Epoch 7 | Train: 0.0092 | Val: 0.0230 (No improvement: 1/5)
+2026-06-11 17:43:10,597 - INFO - Epoch 7 | Train Loss: 0.0092 | Val Loss: 0.0230
+2026-06-11 17:43:13,257 - INFO - Epoch 8 | Train: 0.0090 | Val: 0.0234 (No improvement: 2/5)
+2026-06-11 17:43:13,257 - INFO - Epoch 8 | Train Loss: 0.0090 | Val Loss: 0.0234
+2026-06-11 17:43:15,943 - INFO - Epoch 9 | Train: 0.0087 | Val: 0.0260 (No improvement: 3/5)
+2026-06-11 17:43:15,943 - INFO - Epoch 9 | Train Loss: 0.0087 | Val Loss: 0.0260
+2026-06-11 17:43:18,619 - INFO - Epoch 10 | Train: 0.0085 | Val: 0.0261 (No improvement: 4/5)
+2026-06-11 17:43:18,619 - INFO - Epoch 10 | Train Loss: 0.0085 | Val Loss: 0.0261
+2026-06-11 17:43:21,342 - INFO - Epoch 11 | Train: 0.0082 | Val: 0.0251 (No improvement: 5/5)
+2026-06-11 17:43:21,342 - INFO - 🛑 EARLY STOPPING TRIGGERED 11!
+2026-06-11 17:43:21,342 - INFO - Testing TimeXer on unseen Test set...
+2026-06-11 17:43:21,879 - INFO - *** TimeXer RESULTS (Seq: 120) | RMSE: 0.1685 | MAE: 0.1094 ***
+
+2026-06-11 17:43:22,190 - INFO - --> Initializing TimeMixer (Trainable: True)
+2026-06-11 17:43:22,206 - INFO - Training TimeMixer...
+2026-06-11 17:43:49,207 - INFO - Epoch 1 -> Val Loss improved to 0.0340. Saved checkpoint!
+2026-06-11 17:43:49,207 - INFO - Epoch 1 | Train Loss: 0.0173 | Val Loss: 0.0340
+2026-06-11 17:44:16,118 - INFO - Epoch 2 -> Val Loss improved to 0.0232. Saved checkpoint!
+2026-06-11 17:44:16,118 - INFO - Epoch 2 | Train Loss: 0.0115 | Val Loss: 0.0232
+2026-06-11 17:44:43,087 - INFO - Epoch 3 -> Val Loss improved to 0.0211. Saved checkpoint!
+2026-06-11 17:44:43,087 - INFO - Epoch 3 | Train Loss: 0.0093 | Val Loss: 0.0211
+2026-06-11 17:45:10,347 - INFO - Epoch 4 -> Val Loss improved to 0.0206. Saved checkpoint!
+2026-06-11 17:45:10,347 - INFO - Epoch 4 | Train Loss: 0.0089 | Val Loss: 0.0206
+2026-06-11 17:45:37,516 - INFO - Epoch 5 -> Val Loss improved to 0.0203. Saved checkpoint!
+2026-06-11 17:45:37,516 - INFO - Epoch 5 | Train Loss: 0.0086 | Val Loss: 0.0203
+2026-06-11 17:46:04,766 - INFO - Epoch 6 -> Val Loss improved to 0.0201. Saved checkpoint!
+2026-06-11 17:46:04,767 - INFO - Epoch 6 | Train Loss: 0.0086 | Val Loss: 0.0201
+2026-06-11 17:46:32,134 - INFO - Epoch 7 -> Val Loss improved to 0.0199. Saved checkpoint!
+2026-06-11 17:46:32,135 - INFO - Epoch 7 | Train Loss: 0.0084 | Val Loss: 0.0199
+2026-06-11 17:46:59,405 - INFO - Epoch 8 -> Val Loss improved to 0.0196. Saved checkpoint!
+2026-06-11 17:46:59,405 - INFO - Epoch 8 | Train Loss: 0.0084 | Val Loss: 0.0196
+2026-06-11 17:47:26,677 - INFO - Epoch 9 -> Val Loss improved to 0.0195. Saved checkpoint!
+2026-06-11 17:47:26,677 - INFO - Epoch 9 | Train Loss: 0.0083 | Val Loss: 0.0195
+2026-06-11 17:47:54,864 - INFO - Epoch 10 | Train: 0.0083 | Val: 0.0195 (No improvement: 1/5)
+2026-06-11 17:47:54,864 - INFO - Epoch 10 | Train Loss: 0.0083 | Val Loss: 0.0195
+2026-06-11 17:48:22,135 - INFO - Epoch 11 -> Val Loss improved to 0.0193. Saved checkpoint!
+2026-06-11 17:48:22,135 - INFO - Epoch 11 | Train Loss: 0.0083 | Val Loss: 0.0193
+2026-06-11 17:48:49,324 - INFO - Epoch 12 -> Val Loss improved to 0.0190. Saved checkpoint!
+2026-06-11 17:48:49,324 - INFO - Epoch 12 | Train Loss: 0.0082 | Val Loss: 0.0190
+2026-06-11 17:49:16,461 - INFO - Epoch 13 | Train: 0.0082 | Val: 0.0190 (No improvement: 1/5)
+2026-06-11 17:49:16,461 - INFO - Epoch 13 | Train Loss: 0.0082 | Val Loss: 0.0190
+2026-06-11 17:49:43,612 - INFO - Epoch 14 | Train: 0.0081 | Val: 0.0190 (No improvement: 2/5)
+2026-06-11 17:49:43,613 - INFO - Epoch 14 | Train Loss: 0.0081 | Val Loss: 0.0190
+2026-06-11 17:50:10,920 - INFO - Epoch 15 -> Val Loss improved to 0.0184. Saved checkpoint!
+2026-06-11 17:50:10,920 - INFO - Epoch 15 | Train Loss: 0.0081 | Val Loss: 0.0184
+2026-06-11 17:50:38,172 - INFO - Epoch 16 -> Val Loss improved to 0.0183. Saved checkpoint!
+2026-06-11 17:50:38,172 - INFO - Epoch 16 | Train Loss: 0.0080 | Val Loss: 0.0183
+2026-06-11 17:51:06,115 - INFO - Epoch 17 -> Val Loss improved to 0.0182. Saved checkpoint!
+2026-06-11 17:51:06,116 - INFO - Epoch 17 | Train Loss: 0.0080 | Val Loss: 0.0182
+2026-06-11 17:51:33,431 - INFO - Epoch 18 -> Val Loss improved to 0.0181. Saved checkpoint!
+2026-06-11 17:51:33,431 - INFO - Epoch 18 | Train Loss: 0.0080 | Val Loss: 0.0181
+2026-06-11 17:52:00,585 - INFO - Epoch 19 | Train: 0.0080 | Val: 0.0182 (No improvement: 1/5)
+2026-06-11 17:52:00,586 - INFO - Epoch 19 | Train Loss: 0.0080 | Val Loss: 0.0182
+2026-06-11 17:52:27,823 - INFO - Epoch 20 -> Val Loss improved to 0.0180. Saved checkpoint!
+2026-06-11 17:52:27,824 - INFO - Epoch 20 | Train Loss: 0.0079 | Val Loss: 0.0180
+2026-06-11 17:52:55,083 - INFO - Epoch 21 -> Val Loss improved to 0.0179. Saved checkpoint!
+2026-06-11 17:52:55,084 - INFO - Epoch 21 | Train Loss: 0.0079 | Val Loss: 0.0179
+2026-06-11 17:53:22,408 - INFO - Epoch 22 -> Val Loss improved to 0.0179. Saved checkpoint!
+2026-06-11 17:53:22,409 - INFO - Epoch 22 | Train Loss: 0.0078 | Val Loss: 0.0179
+2026-06-11 17:53:49,565 - INFO - Epoch 23 | Train: 0.0078 | Val: 0.0179 (No improvement: 1/5)
+2026-06-11 17:53:49,565 - INFO - Epoch 23 | Train Loss: 0.0078 | Val Loss: 0.0179
+2026-06-11 17:54:16,790 - INFO - Epoch 24 | Train: 0.0077 | Val: 0.0183 (No improvement: 2/5)
+2026-06-11 17:54:16,790 - INFO - Epoch 24 | Train Loss: 0.0077 | Val Loss: 0.0183
+2026-06-11 17:54:44,864 - INFO - Epoch 25 -> Val Loss improved to 0.0178. Saved checkpoint!
+2026-06-11 17:54:44,864 - INFO - Epoch 25 | Train Loss: 0.0077 | Val Loss: 0.0178
+2026-06-11 17:55:12,022 - INFO - Epoch 26 | Train: 0.0077 | Val: 0.0179 (No improvement: 1/5)
+2026-06-11 17:55:12,023 - INFO - Epoch 26 | Train Loss: 0.0077 | Val Loss: 0.0179
+2026-06-11 17:55:39,366 - INFO - Epoch 27 | Train: 0.0077 | Val: 0.0178 (No improvement: 2/5)
+2026-06-11 17:55:39,367 - INFO - Epoch 27 | Train Loss: 0.0077 | Val Loss: 0.0178
+2026-06-11 17:56:06,633 - INFO - Epoch 28 | Train: 0.0077 | Val: 0.0179 (No improvement: 3/5)
+2026-06-11 17:56:06,634 - INFO - Epoch 28 | Train Loss: 0.0077 | Val Loss: 0.0179
+2026-06-11 17:56:33,834 - INFO - Epoch 29 | Train: 0.0076 | Val: 0.0178 (No improvement: 4/5)
+2026-06-11 17:56:33,835 - INFO - Epoch 29 | Train Loss: 0.0076 | Val Loss: 0.0178
+2026-06-11 17:57:01,060 - INFO - Epoch 30 -> Val Loss improved to 0.0176. Saved checkpoint!
+2026-06-11 17:57:01,060 - INFO - Epoch 30 | Train Loss: 0.0076 | Val Loss: 0.0176
+2026-06-11 17:57:28,327 - INFO - Epoch 31 | Train: 0.0075 | Val: 0.0178 (No improvement: 1/5)
+2026-06-11 17:57:28,327 - INFO - Epoch 31 | Train Loss: 0.0075 | Val Loss: 0.0178
+2026-06-11 17:57:56,636 - INFO - Epoch 32 | Train: 0.0075 | Val: 0.0182 (No improvement: 2/5)
+2026-06-11 17:57:56,637 - INFO - Epoch 32 | Train Loss: 0.0075 | Val Loss: 0.0182
+2026-06-11 17:58:23,951 - INFO - Epoch 33 | Train: 0.0075 | Val: 0.0180 (No improvement: 3/5)
+2026-06-11 17:58:23,952 - INFO - Epoch 33 | Train Loss: 0.0075 | Val Loss: 0.0180
+2026-06-11 17:58:51,197 - INFO - Epoch 34 | Train: 0.0075 | Val: 0.0181 (No improvement: 4/5)
+2026-06-11 17:58:51,197 - INFO - Epoch 34 | Train Loss: 0.0075 | Val Loss: 0.0181
+2026-06-11 17:59:18,470 - INFO - Epoch 35 | Train: 0.0074 | Val: 0.0180 (No improvement: 5/5)
+2026-06-11 17:59:18,470 - INFO - 🛑 EARLY STOPPING TRIGGERED 35!
+2026-06-11 17:59:18,471 - INFO - Testing TimeMixer on unseen Test set...
+2026-06-11 17:59:20,121 - INFO - *** TimeMixer RESULTS (Seq: 120) | RMSE: 0.1465 | MAE: 0.0959 ***
+
+2026-06-11 17:59:20,709 - INFO - --> Initializing ETSformer (Trainable: True)
+2026-06-11 17:59:20,730 - INFO - Training ETSformer...
+2026-06-11 17:59:24,627 - INFO - Epoch 1 -> Val Loss improved to 0.0672. Saved checkpoint!
+2026-06-11 17:59:24,627 - INFO - Epoch 1 | Train Loss: 0.2328 | Val Loss: 0.0672
+2026-06-11 17:59:27,821 - INFO - Epoch 2 -> Val Loss improved to 0.0509. Saved checkpoint!
+2026-06-11 17:59:27,821 - INFO - Epoch 2 | Train Loss: 0.1695 | Val Loss: 0.0509
+2026-06-11 17:59:31,044 - INFO - Epoch 3 -> Val Loss improved to 0.0443. Saved checkpoint!
+2026-06-11 17:59:31,044 - INFO - Epoch 3 | Train Loss: 0.1480 | Val Loss: 0.0443
+2026-06-11 17:59:34,262 - INFO - Epoch 4 -> Val Loss improved to 0.0396. Saved checkpoint!
+2026-06-11 17:59:34,263 - INFO - Epoch 4 | Train Loss: 0.1365 | Val Loss: 0.0396
+2026-06-11 17:59:37,484 - INFO - Epoch 5 -> Val Loss improved to 0.0369. Saved checkpoint!
+2026-06-11 17:59:37,485 - INFO - Epoch 5 | Train Loss: 0.1297 | Val Loss: 0.0369
+2026-06-11 17:59:40,682 - INFO - Epoch 6 -> Val Loss improved to 0.0357. Saved checkpoint!
+2026-06-11 17:59:40,682 - INFO - Epoch 6 | Train Loss: 0.1231 | Val Loss: 0.0357
+2026-06-11 17:59:44,073 - INFO - Epoch 7 -> Val Loss improved to 0.0335. Saved checkpoint!
+2026-06-11 17:59:44,073 - INFO - Epoch 7 | Train Loss: 0.1205 | Val Loss: 0.0335
+2026-06-11 17:59:47,359 - INFO - Epoch 8 -> Val Loss improved to 0.0333. Saved checkpoint!
+2026-06-11 17:59:47,360 - INFO - Epoch 8 | Train Loss: 0.1158 | Val Loss: 0.0333
+2026-06-11 17:59:50,566 - INFO - Epoch 9 -> Val Loss improved to 0.0326. Saved checkpoint!
+2026-06-11 17:59:50,566 - INFO - Epoch 9 | Train Loss: 0.1117 | Val Loss: 0.0326
+2026-06-11 17:59:53,689 - INFO - Epoch 10 -> Val Loss improved to 0.0314. Saved checkpoint!
+2026-06-11 17:59:53,689 - INFO - Epoch 10 | Train Loss: 0.1084 | Val Loss: 0.0314
+2026-06-11 17:59:57,113 - INFO - Epoch 11 -> Val Loss improved to 0.0307. Saved checkpoint!
+2026-06-11 17:59:57,113 - INFO - Epoch 11 | Train Loss: 0.1074 | Val Loss: 0.0307
+2026-06-11 18:00:00,544 - INFO - Epoch 12 | Train: 0.1035 | Val: 0.0309 (No improvement: 1/5)
+2026-06-11 18:00:00,544 - INFO - Epoch 12 | Train Loss: 0.1035 | Val Loss: 0.0309
+2026-06-11 18:00:03,844 - INFO - Epoch 13 -> Val Loss improved to 0.0298. Saved checkpoint!
+2026-06-11 18:00:03,844 - INFO - Epoch 13 | Train Loss: 0.1009 | Val Loss: 0.0298
+2026-06-11 18:00:06,787 - INFO - Epoch 14 | Train: 0.1004 | Val: 0.0299 (No improvement: 1/5)
+2026-06-11 18:00:06,787 - INFO - Epoch 14 | Train Loss: 0.1004 | Val Loss: 0.0299
+2026-06-11 18:00:09,450 - INFO - Epoch 15 | Train: 0.0983 | Val: 0.0305 (No improvement: 2/5)
+2026-06-11 18:00:09,450 - INFO - Epoch 15 | Train Loss: 0.0983 | Val Loss: 0.0305
+2026-06-11 18:00:12,510 - INFO - Epoch 16 -> Val Loss improved to 0.0293. Saved checkpoint!
+2026-06-11 18:00:12,510 - INFO - Epoch 16 | Train Loss: 0.0951 | Val Loss: 0.0293
+2026-06-11 18:00:15,068 - INFO - Epoch 17 -> Val Loss improved to 0.0293. Saved checkpoint!
+2026-06-11 18:00:15,069 - INFO - Epoch 17 | Train Loss: 0.0940 | Val Loss: 0.0293
+2026-06-11 18:00:18,671 - INFO - Epoch 18 | Train: 0.0934 | Val: 0.0294 (No improvement: 1/5)
+2026-06-11 18:00:18,672 - INFO - Epoch 18 | Train Loss: 0.0934 | Val Loss: 0.0294
+2026-06-11 18:00:22,058 - INFO - Epoch 19 | Train: 0.0914 | Val: 0.0293 (No improvement: 2/5)
+2026-06-11 18:00:22,058 - INFO - Epoch 19 | Train Loss: 0.0914 | Val Loss: 0.0293
+2026-06-11 18:00:25,428 - INFO - Epoch 20 -> Val Loss improved to 0.0286. Saved checkpoint!
+2026-06-11 18:00:25,428 - INFO - Epoch 20 | Train Loss: 0.0901 | Val Loss: 0.0286
+2026-06-11 18:00:28,590 - INFO - Epoch 21 | Train: 0.0890 | Val: 0.0291 (No improvement: 1/5)
+2026-06-11 18:00:28,590 - INFO - Epoch 21 | Train Loss: 0.0890 | Val Loss: 0.0291
+2026-06-11 18:00:31,786 - INFO - Epoch 22 -> Val Loss improved to 0.0285. Saved checkpoint!
+2026-06-11 18:00:31,786 - INFO - Epoch 22 | Train Loss: 0.0871 | Val Loss: 0.0285
+2026-06-11 18:00:34,829 - INFO - Epoch 23 | Train: 0.0878 | Val: 0.0287 (No improvement: 1/5)
+2026-06-11 18:00:34,830 - INFO - Epoch 23 | Train Loss: 0.0878 | Val Loss: 0.0287
+2026-06-11 18:00:38,123 - INFO - Epoch 24 -> Val Loss improved to 0.0280. Saved checkpoint!
+2026-06-11 18:00:38,124 - INFO - Epoch 24 | Train Loss: 0.0870 | Val Loss: 0.0280
+2026-06-11 18:00:41,330 - INFO - Epoch 25 | Train: 0.0853 | Val: 0.0295 (No improvement: 1/5)
+2026-06-11 18:00:41,330 - INFO - Epoch 25 | Train Loss: 0.0853 | Val Loss: 0.0295
+2026-06-11 18:00:44,557 - INFO - Epoch 26 | Train: 0.0844 | Val: 0.0286 (No improvement: 2/5)
+2026-06-11 18:00:44,558 - INFO - Epoch 26 | Train Loss: 0.0844 | Val Loss: 0.0286
+2026-06-11 18:00:47,789 - INFO - Epoch 27 | Train: 0.0851 | Val: 0.0283 (No improvement: 3/5)
+2026-06-11 18:00:47,790 - INFO - Epoch 27 | Train Loss: 0.0851 | Val Loss: 0.0283
+2026-06-11 18:00:51,079 - INFO - Epoch 28 | Train: 0.0840 | Val: 0.0282 (No improvement: 4/5)
+2026-06-11 18:00:51,079 - INFO - Epoch 28 | Train Loss: 0.0840 | Val Loss: 0.0282
+2026-06-11 18:00:54,331 - INFO - Epoch 29 | Train: 0.0836 | Val: 0.0294 (No improvement: 5/5)
+2026-06-11 18:00:54,331 - INFO - 🛑 EARLY STOPPING TRIGGERED 29!
+2026-06-11 18:00:54,332 - INFO - Testing ETSformer on unseen Test set...
+2026-06-11 18:00:54,935 - INFO - *** ETSformer RESULTS (Seq: 120) | RMSE: 0.1729 | MAE: 0.1263 ***
+
+2026-06-11 18:00:55,199 - INFO - --> Initializing DLinear (Trainable: True)
+2026-06-11 18:00:55,200 - INFO - Training DLinear...
+2026-06-11 18:00:56,414 - INFO - Epoch 1 -> Val Loss improved to 0.0422. Saved checkpoint!
+2026-06-11 18:00:56,415 - INFO - Epoch 1 | Train Loss: 0.0211 | Val Loss: 0.0422
+2026-06-11 18:00:57,657 - INFO - Epoch 2 -> Val Loss improved to 0.0384. Saved checkpoint!
+2026-06-11 18:00:57,658 - INFO - Epoch 2 | Train Loss: 0.0179 | Val Loss: 0.0384
+2026-06-11 18:00:58,874 - INFO - Epoch 3 -> Val Loss improved to 0.0365. Saved checkpoint!
+2026-06-11 18:00:58,875 - INFO - Epoch 3 | Train Loss: 0.0161 | Val Loss: 0.0365
+2026-06-11 18:01:00,109 - INFO - Epoch 4 -> Val Loss improved to 0.0344. Saved checkpoint!
+2026-06-11 18:01:00,110 - INFO - Epoch 4 | Train Loss: 0.0148 | Val Loss: 0.0344
+2026-06-11 18:01:01,385 - INFO - Epoch 5 -> Val Loss improved to 0.0323. Saved checkpoint!
+2026-06-11 18:01:01,386 - INFO - Epoch 5 | Train Loss: 0.0137 | Val Loss: 0.0323
+2026-06-11 18:01:02,617 - INFO - Epoch 6 -> Val Loss improved to 0.0308. Saved checkpoint!
+2026-06-11 18:01:02,618 - INFO - Epoch 6 | Train Loss: 0.0129 | Val Loss: 0.0308
+2026-06-11 18:01:03,855 - INFO - Epoch 7 -> Val Loss improved to 0.0307. Saved checkpoint!
+2026-06-11 18:01:03,855 - INFO - Epoch 7 | Train Loss: 0.0123 | Val Loss: 0.0307
+2026-06-11 18:01:05,107 - INFO - Epoch 8 -> Val Loss improved to 0.0285. Saved checkpoint!
+2026-06-11 18:01:05,107 - INFO - Epoch 8 | Train Loss: 0.0118 | Val Loss: 0.0285
+2026-06-11 18:01:06,399 - INFO - Epoch 9 -> Val Loss improved to 0.0281. Saved checkpoint!
+2026-06-11 18:01:06,399 - INFO - Epoch 9 | Train Loss: 0.0113 | Val Loss: 0.0281
+2026-06-11 18:01:07,708 - INFO - Epoch 10 -> Val Loss improved to 0.0269. Saved checkpoint!
+2026-06-11 18:01:07,709 - INFO - Epoch 10 | Train Loss: 0.0109 | Val Loss: 0.0269
+2026-06-11 18:01:08,884 - INFO - Epoch 11 | Train: 0.0106 | Val: 0.0274 (No improvement: 1/5)
+2026-06-11 18:01:08,885 - INFO - Epoch 11 | Train Loss: 0.0106 | Val Loss: 0.0274
+2026-06-11 18:01:10,104 - INFO - Epoch 12 -> Val Loss improved to 0.0259. Saved checkpoint!
+2026-06-11 18:01:10,104 - INFO - Epoch 12 | Train Loss: 0.0103 | Val Loss: 0.0259
+2026-06-11 18:01:11,367 - INFO - Epoch 13 | Train: 0.0101 | Val: 0.0266 (No improvement: 1/5)
+2026-06-11 18:01:11,368 - INFO - Epoch 13 | Train Loss: 0.0101 | Val Loss: 0.0266
+2026-06-11 18:01:12,627 - INFO - Epoch 14 -> Val Loss improved to 0.0253. Saved checkpoint!
+2026-06-11 18:01:12,628 - INFO - Epoch 14 | Train Loss: 0.0099 | Val Loss: 0.0253
+2026-06-11 18:01:13,868 - INFO - Epoch 15 -> Val Loss improved to 0.0252. Saved checkpoint!
+2026-06-11 18:01:13,869 - INFO - Epoch 15 | Train Loss: 0.0097 | Val Loss: 0.0252
+2026-06-11 18:01:15,122 - INFO - Epoch 16 | Train: 0.0096 | Val: 0.0255 (No improvement: 1/5)
+2026-06-11 18:01:15,123 - INFO - Epoch 16 | Train Loss: 0.0096 | Val Loss: 0.0255
+2026-06-11 18:01:16,372 - INFO - Epoch 17 -> Val Loss improved to 0.0239. Saved checkpoint!
+2026-06-11 18:01:16,372 - INFO - Epoch 17 | Train Loss: 0.0094 | Val Loss: 0.0239
+2026-06-11 18:01:17,611 - INFO - Epoch 18 | Train: 0.0093 | Val: 0.0242 (No improvement: 1/5)
+2026-06-11 18:01:17,611 - INFO - Epoch 18 | Train Loss: 0.0093 | Val Loss: 0.0242
+2026-06-11 18:01:18,876 - INFO - Epoch 19 | Train: 0.0092 | Val: 0.0245 (No improvement: 2/5)
+2026-06-11 18:01:18,876 - INFO - Epoch 19 | Train Loss: 0.0092 | Val Loss: 0.0245
+2026-06-11 18:01:20,130 - INFO - Epoch 20 | Train: 0.0091 | Val: 0.0247 (No improvement: 3/5)
+2026-06-11 18:01:20,131 - INFO - Epoch 20 | Train Loss: 0.0091 | Val Loss: 0.0247
+2026-06-11 18:01:21,388 - INFO - Epoch 21 -> Val Loss improved to 0.0225. Saved checkpoint!
+2026-06-11 18:01:21,388 - INFO - Epoch 21 | Train Loss: 0.0090 | Val Loss: 0.0225
+2026-06-11 18:01:22,619 - INFO - Epoch 22 | Train: 0.0090 | Val: 0.0230 (No improvement: 1/5)
+2026-06-11 18:01:22,619 - INFO - Epoch 22 | Train Loss: 0.0090 | Val Loss: 0.0230
+2026-06-11 18:01:23,892 - INFO - Epoch 23 | Train: 0.0088 | Val: 0.0232 (No improvement: 2/5)
+2026-06-11 18:01:23,893 - INFO - Epoch 23 | Train Loss: 0.0088 | Val Loss: 0.0232
+2026-06-11 18:01:25,172 - INFO - Epoch 24 | Train: 0.0088 | Val: 0.0231 (No improvement: 3/5)
+2026-06-11 18:01:25,173 - INFO - Epoch 24 | Train Loss: 0.0088 | Val Loss: 0.0231
+2026-06-11 18:01:26,421 - INFO - Epoch 25 | Train: 0.0087 | Val: 0.0237 (No improvement: 4/5)
+2026-06-11 18:01:26,421 - INFO - Epoch 25 | Train Loss: 0.0087 | Val Loss: 0.0237
+2026-06-11 18:01:27,687 - INFO - Epoch 26 | Train: 0.0087 | Val: 0.0243 (No improvement: 5/5)
+2026-06-11 18:01:27,688 - INFO - 🛑 EARLY STOPPING TRIGGERED 26!
+2026-06-11 18:01:27,688 - INFO - Testing DLinear on unseen Test set...
+2026-06-11 18:01:28,182 - INFO - *** DLinear RESULTS (Seq: 120) | RMSE: 0.1519 | MAE: 0.1014 ***
+
+2026-06-11 18:01:28,455 - INFO - --> Initializing Autoformer (Trainable: True)
+2026-06-11 18:01:28,493 - INFO - Training Autoformer...
+2026-06-11 18:01:32,045 - INFO - Epoch 1 -> Val Loss improved to 0.0559. Saved checkpoint!
+2026-06-11 18:01:32,045 - INFO - Epoch 1 | Train Loss: 0.1039 | Val Loss: 0.0559
+2026-06-11 18:01:35,465 - INFO - Epoch 2 -> Val Loss improved to 0.0476. Saved checkpoint!
+2026-06-11 18:01:35,466 - INFO - Epoch 2 | Train Loss: 0.0415 | Val Loss: 0.0476
+2026-06-11 18:01:38,812 - INFO - Epoch 3 -> Val Loss improved to 0.0465. Saved checkpoint!
+2026-06-11 18:01:38,812 - INFO - Epoch 3 | Train Loss: 0.0364 | Val Loss: 0.0465
+2026-06-11 18:01:42,135 - INFO - Epoch 4 -> Val Loss improved to 0.0455. Saved checkpoint!
+2026-06-11 18:01:42,136 - INFO - Epoch 4 | Train Loss: 0.0336 | Val Loss: 0.0455
+2026-06-11 18:01:45,643 - INFO - Epoch 5 -> Val Loss improved to 0.0451. Saved checkpoint!
+2026-06-11 18:01:45,643 - INFO - Epoch 5 | Train Loss: 0.0312 | Val Loss: 0.0451
+2026-06-11 18:01:48,891 - INFO - Epoch 6 -> Val Loss improved to 0.0448. Saved checkpoint!
+2026-06-11 18:01:48,891 - INFO - Epoch 6 | Train Loss: 0.0297 | Val Loss: 0.0448
+2026-06-11 18:01:52,355 - INFO - Epoch 7 -> Val Loss improved to 0.0447. Saved checkpoint!
+2026-06-11 18:01:52,356 - INFO - Epoch 7 | Train Loss: 0.0278 | Val Loss: 0.0447
+2026-06-11 18:01:55,648 - INFO - Epoch 8 -> Val Loss improved to 0.0435. Saved checkpoint!
+2026-06-11 18:01:55,648 - INFO - Epoch 8 | Train Loss: 0.0268 | Val Loss: 0.0435
+2026-06-11 18:01:59,019 - INFO - Epoch 9 | Train: 0.0255 | Val: 0.0453 (No improvement: 1/5)
+2026-06-11 18:01:59,020 - INFO - Epoch 9 | Train Loss: 0.0255 | Val Loss: 0.0453
+2026-06-11 18:02:02,359 - INFO - Epoch 10 | Train: 0.0244 | Val: 0.0446 (No improvement: 2/5)
+2026-06-11 18:02:02,359 - INFO - Epoch 10 | Train Loss: 0.0244 | Val Loss: 0.0446
+2026-06-11 18:02:05,740 - INFO - Epoch 11 | Train: 0.0232 | Val: 0.0447 (No improvement: 3/5)
+2026-06-11 18:02:05,740 - INFO - Epoch 11 | Train Loss: 0.0232 | Val Loss: 0.0447
+2026-06-11 18:02:08,910 - INFO - Epoch 12 | Train: 0.0220 | Val: 0.0446 (No improvement: 4/5)
+2026-06-11 18:02:08,910 - INFO - Epoch 12 | Train Loss: 0.0220 | Val Loss: 0.0446
+2026-06-11 18:02:12,297 - INFO - Epoch 13 | Train: 0.0207 | Val: 0.0442 (No improvement: 5/5)
+2026-06-11 18:02:12,298 - INFO - 🛑 EARLY STOPPING TRIGGERED 13!
+2026-06-11 18:02:12,299 - INFO - Testing Autoformer on unseen Test set...
+2026-06-11 18:02:12,996 - INFO - *** Autoformer RESULTS (Seq: 120) | RMSE: 0.2663 | MAE: 0.1737 ***
+
+2026-06-11 18:02:13,245 - INFO - --> Initializing PatchTST (Trainable: True)
+2026-06-11 18:02:13,263 - INFO - Training PatchTST...
+2026-06-11 18:02:17,693 - INFO - Epoch 1 -> Val Loss improved to 0.0208. Saved checkpoint!
+2026-06-11 18:02:17,693 - INFO - Epoch 1 | Train Loss: 0.0119 | Val Loss: 0.0208
+2026-06-11 18:02:22,005 - INFO - Epoch 2 -> Val Loss improved to 0.0203. Saved checkpoint!
+2026-06-11 18:02:22,006 - INFO - Epoch 2 | Train Loss: 0.0100 | Val Loss: 0.0203
+2026-06-11 18:02:26,316 - INFO - Epoch 3 -> Val Loss improved to 0.0194. Saved checkpoint!
+2026-06-11 18:02:26,317 - INFO - Epoch 3 | Train Loss: 0.0097 | Val Loss: 0.0194
+2026-06-11 18:02:30,649 - INFO - Epoch 4 -> Val Loss improved to 0.0185. Saved checkpoint!
+2026-06-11 18:02:30,649 - INFO - Epoch 4 | Train Loss: 0.0094 | Val Loss: 0.0185
+2026-06-11 18:02:34,942 - INFO - Epoch 5 | Train: 0.0093 | Val: 0.0190 (No improvement: 1/5)
+2026-06-11 18:02:34,942 - INFO - Epoch 5 | Train Loss: 0.0093 | Val Loss: 0.0190
+2026-06-11 18:02:39,360 - INFO - Epoch 6 -> Val Loss improved to 0.0183. Saved checkpoint!
+2026-06-11 18:02:39,360 - INFO - Epoch 6 | Train Loss: 0.0092 | Val Loss: 0.0183
+2026-06-11 18:02:43,669 - INFO - Epoch 7 | Train: 0.0092 | Val: 0.0183 (No improvement: 1/5)
+2026-06-11 18:02:43,670 - INFO - Epoch 7 | Train Loss: 0.0092 | Val Loss: 0.0183
+2026-06-11 18:02:47,942 - INFO - Epoch 8 | Train: 0.0091 | Val: 0.0194 (No improvement: 2/5)
+2026-06-11 18:02:47,943 - INFO - Epoch 8 | Train Loss: 0.0091 | Val Loss: 0.0194
+2026-06-11 18:02:52,263 - INFO - Epoch 9 | Train: 0.0090 | Val: 0.0186 (No improvement: 3/5)
+2026-06-11 18:02:52,263 - INFO - Epoch 9 | Train Loss: 0.0090 | Val Loss: 0.0186
+2026-06-11 18:02:56,610 - INFO - Epoch 10 | Train: 0.0089 | Val: 0.0187 (No improvement: 4/5)
+2026-06-11 18:02:56,611 - INFO - Epoch 10 | Train Loss: 0.0089 | Val Loss: 0.0187
+2026-06-11 18:03:00,913 - INFO - Epoch 11 | Train: 0.0090 | Val: 0.0183 (No improvement: 5/5)
+2026-06-11 18:03:00,914 - INFO - 🛑 EARLY STOPPING TRIGGERED 11!
+2026-06-11 18:03:00,914 - INFO - Testing PatchTST on unseen Test set...
+2026-06-11 18:03:01,557 - INFO - *** PatchTST RESULTS (Seq: 120) | RMSE: 0.1370 | MAE: 0.0910 ***
+
+2026-06-11 18:03:01,871 - INFO - --> Initializing iTransformer (Trainable: True)
+2026-06-11 18:03:01,885 - INFO - Training iTransformer...
+2026-06-11 18:03:03,776 - INFO - Epoch 1 -> Val Loss improved to 0.0231. Saved checkpoint!
+2026-06-11 18:03:03,776 - INFO - Epoch 1 | Train Loss: 0.0122 | Val Loss: 0.0231
+2026-06-11 18:03:05,557 - INFO - Epoch 2 -> Val Loss improved to 0.0214. Saved checkpoint!
+2026-06-11 18:03:05,557 - INFO - Epoch 2 | Train Loss: 0.0093 | Val Loss: 0.0214
+2026-06-11 18:03:07,408 - INFO - Epoch 3 -> Val Loss improved to 0.0206. Saved checkpoint!
+2026-06-11 18:03:07,408 - INFO - Epoch 3 | Train Loss: 0.0088 | Val Loss: 0.0206
+2026-06-11 18:03:09,175 - INFO - Epoch 4 -> Val Loss improved to 0.0201. Saved checkpoint!
+2026-06-11 18:03:09,175 - INFO - Epoch 4 | Train Loss: 0.0085 | Val Loss: 0.0201
+2026-06-11 18:03:10,958 - INFO - Epoch 5 -> Val Loss improved to 0.0201. Saved checkpoint!
+2026-06-11 18:03:10,958 - INFO - Epoch 5 | Train Loss: 0.0081 | Val Loss: 0.0201
+2026-06-11 18:03:12,747 - INFO - Epoch 6 | Train: 0.0078 | Val: 0.0203 (No improvement: 1/5)
+2026-06-11 18:03:12,747 - INFO - Epoch 6 | Train Loss: 0.0078 | Val Loss: 0.0203
+2026-06-11 18:03:14,537 - INFO - Epoch 7 | Train: 0.0075 | Val: 0.0201 (No improvement: 2/5)
+2026-06-11 18:03:14,537 - INFO - Epoch 7 | Train Loss: 0.0075 | Val Loss: 0.0201
+2026-06-11 18:03:16,303 - INFO - Epoch 8 | Train: 0.0072 | Val: 0.0212 (No improvement: 3/5)
+2026-06-11 18:03:16,303 - INFO - Epoch 8 | Train Loss: 0.0072 | Val Loss: 0.0212
+2026-06-11 18:03:18,149 - INFO - Epoch 9 | Train: 0.0070 | Val: 0.0217 (No improvement: 4/5)
+2026-06-11 18:03:18,149 - INFO - Epoch 9 | Train Loss: 0.0070 | Val Loss: 0.0217
+2026-06-11 18:03:20,006 - INFO - Epoch 10 | Train: 0.0067 | Val: 0.0229 (No improvement: 5/5)
+2026-06-11 18:03:20,006 - INFO - 🛑 EARLY STOPPING TRIGGERED 10!
+2026-06-11 18:03:20,007 - INFO - Testing iTransformer on unseen Test set...
+2026-06-11 18:03:20,563 - INFO - *** iTransformer RESULTS (Seq: 120) | RMSE: 0.1393 | MAE: 0.0942 ***
+
+2026-06-11 18:03:20,827 - INFO - --> Initializing Chronos (Trainable: False)
+2026-06-11 18:03:28,304 - INFO - Testing Chronos on unseen Test set...
+2026-06-11 18:04:08,342 - INFO - *** Chronos RESULTS (Seq: 120) | RMSE: 0.1358 | MAE: 0.0923 ***
+
+2026-06-11 18:04:08,630 - INFO - --> Initializing TimesFM (Trainable: False)
+2026-06-11 18:04:08,928 - INFO - Downloading checkpoint from Hugging Face repo google/timesfm-2.5-200m-pytorch
+2026-06-11 18:04:10,804 - INFO - Loading checkpoint from: /home/nckh2/.cache/huggingface/hub/models--google--timesfm-2.5-200m-pytorch/snapshots/1d952420fba87f3c6dee4f240de0f1a0fbc790e3/model.safetensors
+2026-06-11 18:04:11,082 - INFO - Compiling model...
+2026-06-11 18:04:11,118 - INFO - When compiling, max context needs to be multiple of the patch size 32. Using max context = 128 instead.
+2026-06-11 18:04:11,119 - INFO - When compiling, max horizon needs to be multiple of the output patch size 128. Using max horizon = 128 instead.
+2026-06-11 18:04:11,119 - INFO - Testing TimesFM on unseen Test set...
+2026-06-11 18:32:26,178 - INFO - *** TimesFM RESULTS (Seq: 120) | RMSE: 0.1355 | MAE: 0.0905 ***
+
+2026-06-11 18:32:26,490 - INFO - --> Initializing TimeMoE (Trainable: False)
+2026-06-11 18:32:28,821 - INFO - Testing TimeMoE on unseen Test set...
+2026-06-11 18:40:16,732 - INFO - *** TimeMoE RESULTS (Seq: 120) | RMSE: 0.1720 | MAE: 0.1108 ***
+
+2026-06-11 18:40:16,946 - INFO - Benchmarking Completed Successfully!

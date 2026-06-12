@@ -357,6 +357,7 @@ class Model(nn.Module):
         x_list = self.pre_enc(x_list)
         if x_mark_enc is not None:
             for i, x, x_mark in zip(range(len(x_list[0])), x_list[0], x_mark_list):
+                x_mark = x_mark[:, :x.shape[1], :] # fix
                 enc_out = self.enc_embedding(x, x_mark)  # [B,T,C]
                 enc_out_list.append(enc_out)
         else:

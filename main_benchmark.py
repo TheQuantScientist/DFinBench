@@ -54,8 +54,9 @@ CONFIG = {
     "seq_lens": [60, 90, 120],      
     "train_ratio": 0.8,
     "val_ratio": 0.1,               
-    "batch_size": 8,                
-    "epochs": 10,                   
+    "batch_size": 16,                
+    "epochs": 100,  
+    "num_workers": 4,                 
     "learning_rate": 1e-4,
     "device": torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 }
@@ -101,7 +102,8 @@ def load_and_combine(data_dir):
     for asset in tqdm(assets, desc="Data Combining"):
         df_all = data[asset] if df_all is None else df_all.join(data[asset], how='outer')
         
-    df_all = df_all.ffill().bfill().sort_index()
+    # Sắp xếp thời gian trước, sau đó chỉ dùng ffill, nếu vẫn còn NaN ở những ngày đầu tiên nhất, fill with zero -> fix look-ahead bias
+    df_all = df_all.sort_index().ffill().fillna(0)
     logger.info(f"[*] Done combining! Size of total matrix: {df_all.shape} (R x C)")
     
     return df_all
@@ -200,19 +202,37 @@ def run_benchmark():
         
         # Tập Train
         train_ds = TimeSeriesDataset(train_scaled, train_time, seq_len, CONFIG["pred_len"])
-        train_loader = DataLoader(train_ds, batch_size=CONFIG["batch_size"], shuffle=True)
+        train_loader = DataLoader(
+            train_ds, 
+            batch_size=CONFIG["batch_size"], 
+            shuffle=True, 
+            num_workers=CONFIG["num_workers"], # multithreading
+            pin_memory=True                   
+        )
         
         # Tập Validation: Chỉ lấy seq_len điểm dữ liệu cuối của Train để làm Lookback
         val_input = np.concatenate((train_scaled[-seq_len:], val_scaled), axis=0)
         val_input_time = np.concatenate((train_time[-seq_len:], val_time), axis=0)
         val_ds = TimeSeriesDataset(val_input, val_input_time, seq_len, CONFIG["pred_len"])
-        val_loader = DataLoader(val_ds, batch_size=CONFIG["batch_size"], shuffle=False)
+        val_loader = DataLoader(
+            val_ds, 
+            batch_size=CONFIG["batch_size"], 
+            shuffle=False, 
+            num_workers=CONFIG["num_workers"], 
+            pin_memory=True
+        )
 
         # Tập Test: Chỉ lấy seq_len điểm dữ liệu cuối của Validation để làm Lookback
         test_input = np.concatenate((val_scaled[-seq_len:], test_scaled), axis=0)
         test_input_time = np.concatenate((val_time[-seq_len:], test_time), axis=0)
         test_ds = TimeSeriesDataset(test_input, test_input_time, seq_len, CONFIG["pred_len"])
-        test_loader = DataLoader(test_ds, batch_size=CONFIG["batch_size"], shuffle=False)
+        test_loader = DataLoader(
+            test_ds, 
+            batch_size=CONFIG["batch_size"], 
+            shuffle=False, 
+            num_workers=CONFIG["num_workers"], 
+            pin_memory=True
+        )
 
         for model_info in MODEL_REGISTRY:
             model_name = model_info['name']
@@ -235,11 +255,11 @@ def run_benchmark():
             
             #  Neuron network
             args.moving_avg = 25
-            args.d_model = 512         
+            args.d_model = 256         
             args.n_heads = 8
             args.e_layers = 2        
             args.d_layers = 1
-            args.d_ff = 2048 
+            args.d_ff = 512
             args.factor = 1
             args.dropout = 0.1
             args.fc_dropout = 0.1
@@ -268,6 +288,9 @@ def run_benchmark():
             args.use_future_temporal_feature = 0
             # ==========================================================
             
+            if model_name == 'ETSformer':
+                args.d_layers = args.e_layers  # Fix layers 
+
             try:
                 model = model_info['class'](args).to(CONFIG['device'])
             except Exception as e:
@@ -282,6 +305,10 @@ def run_benchmark():
                 criterion = nn.MSELoss()
                 
                 best_loss = float('inf')
+
+                patience = 5  
+                early_stop_counter = 0
+
                 for epoch in range(CONFIG["epochs"]):
                     model.train()
                     train_loss = 0
@@ -318,6 +345,14 @@ def run_benchmark():
                         best_loss = val_loss
                         torch.save(model.state_dict(), f"checkpoints/{model_name}_seq{seq_len}_best.pth")
                         logger.info(f"Epoch {epoch+1} -> Val Loss improved to {best_loss:.4f}. Saved checkpoint!")
+                        early_stop_counter = 0 
+                    else:
+                        early_stop_counter += 1
+                        logger.info(f"Epoch {epoch+1} | Train: {train_loss/len(train_loader):.4f} | Val: {val_loss:.4f} (No improvement: {early_stop_counter}/{patience})")
+                        
+                        if early_stop_counter >= patience:
+                            logger.info(f"🛑 EARLY STOPPING TRIGGERED {epoch+1}!")
+                            break
 
                     logger.info(f"Epoch {epoch+1} | Train Loss: {train_loss/len(train_loader):.4f} | Val Loss: {val_loss:.4f}")
 
@@ -351,6 +386,7 @@ def run_benchmark():
 
             # Memory Cleanup
             del model
+            del optimizer
             torch.cuda.empty_cache()
             gc.collect()
 

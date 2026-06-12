@@ -16,11 +16,9 @@ dfinbench_env/
 
 # Project Specific
 
-checkpoints/            # Skip weight files when pushing code
-*.log                   # Skip log files
-*.pth                   # Skip model weight files
-*.weights
-*.ipynb_checkpoints/
+checkpoints/
+*.log
+!benchmark_results.log
 
 # OS specific
 .DS_Store
